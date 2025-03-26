@@ -16,10 +16,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
 }) => {
   const getPositionFullName = (pos: string) => {
     switch(pos) {
-      case 'GK': return 'Goalkeeper';
-      case 'DF': return 'Defender';
-      case 'MF': return 'Midfielder';
-      case 'FW': return 'Forward';
+      case 'GK': return 'Голкіпер';
+      case 'UN': return 'Універсал';
       default: return pos;
     }
   };
@@ -52,31 +50,31 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         <div className="p-4">
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div className="stat-card">
-              <span className="text-gray-500 text-sm">Goals</span>
+              <span className="text-gray-500 text-sm">Голи</span>
               <span className="text-4xl font-bebas text-team-primary">{player.stats.goals}</span>
             </div>
             <div className="stat-card">
-              <span className="text-gray-500 text-sm">Assists</span>
+              <span className="text-gray-500 text-sm">Передачі</span>
               <span className="text-4xl font-bebas text-team-primary">{player.stats.assists}</span>
             </div>
             {player.position === 'GK' && (
               <>
                 <div className="stat-card">
-                  <span className="text-gray-500 text-sm">Saves</span>
+                  <span className="text-gray-500 text-sm">Сейви</span>
                   <span className="text-4xl font-bebas text-team-primary">{player.stats.saves}</span>
                 </div>
                 <div className="stat-card">
-                  <span className="text-gray-500 text-sm">Clean Sheets</span>
+                  <span className="text-gray-500 text-sm">Сухі матчі</span>
                   <span className="text-4xl font-bebas text-team-primary">{player.stats.cleanSheets}</span>
                 </div>
               </>
             )}
             <div className="stat-card">
-              <span className="text-gray-500 text-sm">Fouls</span>
+              <span className="text-gray-500 text-sm">Фоли</span>
               <span className="text-4xl font-bebas text-team-primary">{player.stats.fouls}</span>
             </div>
             <div className="stat-card">
-              <span className="text-gray-500 text-sm">Attendance</span>
+              <span className="text-gray-500 text-sm">Відвідуваність</span>
               <span className="text-4xl font-bebas text-team-primary">{getAttendanceRate()}%</span>
             </div>
           </div>

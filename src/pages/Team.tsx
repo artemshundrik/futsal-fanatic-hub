@@ -9,9 +9,7 @@ const Team = () => {
 
   const positions = [
     { code: 'GK', name: 'Воротарі' },
-    { code: 'DF', name: 'Захисники' },
-    { code: 'MF', name: 'Півзахисники' },
-    { code: 'FW', name: 'Нападники' }
+    { code: 'UN', name: 'Універсали' }
   ];
 
   const filteredPlayers = selectedPosition

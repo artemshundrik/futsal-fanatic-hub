@@ -4,7 +4,7 @@ import { players, Player } from '../data/sample-data';
 import PlayerCard from '../components/PlayerCard';
 import { Search } from 'lucide-react';
 
-type Position = 'All' | 'GK' | 'DF' | 'MF' | 'FW';
+type Position = 'All' | 'GK' | 'UN';
 type SortOption = 'name' | 'goals' | 'assists' | 'attendance';
 
 const Players = () => {
@@ -12,15 +12,15 @@ const Players = () => {
   const [sortBy, setSortBy] = useState<SortOption>('name');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const positionFilters: Position[] = ['All', 'GK', 'DF', 'MF', 'FW'];
+  const positionFilters: Position[] = ['All', 'GK', 'UN'];
 
   const filteredPlayers = players.filter(player => {
-    // Filter by position
+    // Фільтр за позицією
     if (selectedPosition !== 'All' && player.position !== selectedPosition) {
       return false;
     }
     
-    // Filter by search term
+    // Фільтр за пошуковим запитом
     if (searchTerm && !player.name.toLowerCase().includes(searchTerm.toLowerCase())) {
       return false;
     }
@@ -61,11 +61,11 @@ const Players = () => {
 
   return (
     <div className="page-container pt-28">
-      <h1 className="page-title text-center">Player Statistics</h1>
+      <h1 className="page-title text-center">Статистика Гравців</h1>
       
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 space-y-4 md:space-y-0">
-          {/* Position filters */}
+          {/* Фільтри позицій */}
           <div className="flex flex-wrap gap-2">
             {positionFilters.map(position => (
               <button
@@ -73,46 +73,46 @@ const Players = () => {
                 className={`px-4 py-2 rounded-md transition-all ${getPositionColor(position)}`}
                 onClick={() => setSelectedPosition(position)}
               >
-                {position === 'All' ? 'All Positions' : position}
+                {position === 'All' ? 'Всі позиції' : position === 'GK' ? 'Голкіпер' : 'Універсал'}
               </button>
             ))}
           </div>
           
-          {/* Sort options */}
+          {/* Опції сортування */}
           <div className="flex flex-wrap gap-2">
-            <span className="text-gray-500 self-center mr-2">Sort by:</span>
+            <span className="text-gray-500 self-center mr-2">Сортувати за:</span>
             <button
               className={`px-4 py-2 rounded-md transition-all ${getSortButtonClass('name')}`}
               onClick={() => setSortBy('name')}
             >
-              Name
+              Ім'я
             </button>
             <button
               className={`px-4 py-2 rounded-md transition-all ${getSortButtonClass('goals')}`}
               onClick={() => setSortBy('goals')}
             >
-              Goals
+              Голи
             </button>
             <button
               className={`px-4 py-2 rounded-md transition-all ${getSortButtonClass('assists')}`}
               onClick={() => setSortBy('assists')}
             >
-              Assists
+              Передачі
             </button>
             <button
               className={`px-4 py-2 rounded-md transition-all ${getSortButtonClass('attendance')}`}
               onClick={() => setSortBy('attendance')}
             >
-              Attendance
+              Відвідуваність
             </button>
           </div>
         </div>
         
-        {/* Search bar */}
+        {/* Поле пошуку */}
         <div className="relative mb-8">
           <input
             type="text"
-            placeholder="Search players..."
+            placeholder="Пошук гравців..."
             className="w-full px-4 py-3 pl-12 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-team-primary focus:border-transparent"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -120,7 +120,7 @@ const Players = () => {
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
         </div>
         
-        {/* Players grid */}
+        {/* Сітка гравців */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sortedPlayers.length > 0 ? (
             sortedPlayers.map(player => (
@@ -128,9 +128,9 @@ const Players = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-16">
-              <h3 className="text-xl font-semibold text-gray-500 mb-2">No players found</h3>
+              <h3 className="text-xl font-semibold text-gray-500 mb-2">Гравців не знайдено</h3>
               <p className="text-gray-400">
-                Try changing your filters or search term
+                Спробуйте змінити фільтри або пошуковий запит
               </p>
             </div>
           )}

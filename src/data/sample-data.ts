@@ -1,3 +1,4 @@
+
 export const teamName = "FAYNA TEAM";
 export const teamSlogan = "Passion, Teamwork, Victory";
 export const teamFoundedYear = 2024;
@@ -5,7 +6,7 @@ export const teamFoundedYear = 2024;
 export interface Player {
   id: number;
   name: string;
-  position: "GK" | "DF" | "MF" | "FW";
+  position: "GK" | "UN";
   number: number;
   image: string;
   stats: {
@@ -62,8 +63,8 @@ export interface NewsArticle {
 export const players: Player[] = [
   {
     id: 1,
-    name: "Andriy Shevchenko",
-    position: "FW",
+    name: "Андрій Шевченко",
+    position: "UN",
     number: 7,
     image: "https://images.unsplash.com/photo-1564135624576-c5c88640f235?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -80,7 +81,7 @@ export const players: Player[] = [
   },
   {
     id: 2,
-    name: "Oleksandr Shovkovskyi",
+    name: "Олександр Шовковський",
     position: "GK",
     number: 1,
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -99,8 +100,8 @@ export const players: Player[] = [
   },
   {
     id: 3,
-    name: "Anatoliy Tymoshchuk",
-    position: "MF",
+    name: "Анатолій Тимощук",
+    position: "UN",
     number: 4,
     image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=2188&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -113,8 +114,8 @@ export const players: Player[] = [
   },
   {
     id: 4,
-    name: "Oleh Luzhnyi",
-    position: "DF",
+    name: "Олег Лужний",
+    position: "UN",
     number: 2,
     image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -130,8 +131,8 @@ export const players: Player[] = [
   },
   {
     id: 5,
-    name: "Ruslan Rotan",
-    position: "MF",
+    name: "Руслан Ротань",
+    position: "UN",
     number: 8,
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -144,8 +145,8 @@ export const players: Player[] = [
   },
   {
     id: 6,
-    name: "Serhiy Rebrov",
-    position: "FW",
+    name: "Сергій Ребров",
+    position: "UN",
     number: 11,
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -158,8 +159,8 @@ export const players: Player[] = [
   },
   {
     id: 7,
-    name: "Yevhen Konoplyanka",
-    position: "MF",
+    name: "Євген Коноплянка",
+    position: "UN",
     number: 10,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
@@ -172,8 +173,8 @@ export const players: Player[] = [
   },
   {
     id: 8,
-    name: "Dmytro Chyhrynskyi",
-    position: "DF",
+    name: "Дмитро Чигринський",
+    position: "UN",
     number: 3,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
