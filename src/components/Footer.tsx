@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bebas mb-6 tracking-wider border-b border-white/10 pb-2">КОНТАКТИ</h3>
+            <h3 className="font-bebas mb-6 tracking-wider border-b border-white/10 pb-2 text-lg font-extrabold">КОНТАКТИ</h3>
             <ul className="space-y-4">
               <li className="flex items-start group">
                 <MapPin size={20} className="mr-3 mt-1 flex-shrink-0 text-team-accent" />
