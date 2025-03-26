@@ -36,7 +36,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/d790d29c-3dd2-48ee-a7d6-8cfade84fda0.png" 
               alt={teamName}
-              className="h-20 md:h-28 lg:h-32 w-auto"
+              className="h-16 md:h-22 lg:h-26 w-auto"
             />
           </div>
           <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
