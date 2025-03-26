@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-6">
-            <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
+            <Link to="/" className="font-argentina tracking-wider flex items-center mb-4">
               <img 
                 src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
                 alt={teamName}
@@ -137,7 +137,7 @@ const Footer = () => {
               className="h-10 opacity-70" 
             />
           </div>
-          <p className="text-gray-400 text-sm">© {currentYear} {teamName}. Всі права захищені.</p>
+          <p className="text-gray-400 text-sm">© {currentYear} <span className="font-argentina">{teamName}</span>. Всі права захищені.</p>
         </div>
       </div>
     </footer>

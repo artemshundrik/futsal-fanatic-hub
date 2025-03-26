@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Argentina 2024 font import */
+@font-face {
+  font-family: 'Argentina';
+  src: url('/lovable-uploads/b11cb1ea-7d6b-4671-8716-7ac0f56dde06.png') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
