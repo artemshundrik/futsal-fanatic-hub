@@ -21,28 +21,27 @@ const Index = () => {
       <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/lovable-uploads/11d8001c-9a43-4e06-88e4-0fc0c8014485.png" 
+            src="/lovable-uploads/7ddcd836-4422-4254-8a68-5939ab823aea.png" 
             alt={teamName}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-team-primary/80 to-team-primary/40"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
-          <div className="bg-black/40 backdrop-blur-sm py-3 px-5 rounded-lg inline-block mb-6">
-            <span className="uppercase tracking-wider font-medium">
-              ЛАСКАВО ПРОСИМО НА НАШ ОФІЦІЙНИЙ САЙТ
-            </span>
+          <span className="inline-block py-2 px-4 bg-team-secondary text-white rounded-md text-sm font-medium uppercase tracking-wider mb-6 animate-scale-in">
+            Ласкаво просимо на наш офіційний сайт
+          </span>
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/lovable-uploads/d790d29c-3dd2-48ee-a7d6-8cfade84fda0.png" 
+              alt={teamName}
+              className="h-16 md:h-22 lg:h-26 w-auto"
+            />
           </div>
-          
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bebas mb-4 tracking-wider">
-            FAYNA TEAM
-          </h1>
-          
-          <p className="text-xl md:text-2xl font-light mb-10 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
             {teamSlogan}
           </p>
-          
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/team" className="btn-primary">
               <Users className="mr-2" size={20} />
