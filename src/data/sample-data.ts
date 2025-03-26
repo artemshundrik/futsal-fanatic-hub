@@ -1,7 +1,6 @@
-
 export const teamName = "FAYNA TEAM";
 export const teamSlogan = "Passion, Teamwork, Victory";
-export const teamFoundedYear = 2018;
+export const teamFoundedYear = 2024;
 
 export interface Player {
   id: number;
