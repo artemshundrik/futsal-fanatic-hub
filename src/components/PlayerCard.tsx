@@ -12,14 +12,6 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
   player,
   className = '' 
 }) => {
-  const getPositionFullName = (pos: string) => {
-    switch(pos) {
-      case 'GK': return 'Голкіпер';
-      case 'UN': return 'Універсал';
-      default: return pos;
-    }
-  };
-
   // Use the uploaded Dovbyk image as placeholder
   const playerImage = "public/lovable-uploads/51024c31-41f7-4022-8a86-273e102b414b.png";
 
@@ -53,13 +45,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         </div>
       </div>
 
-      {/* Position info and social media moved to appear below the card */}
+      {/* Social Media Links - without position info */}
       <div className="mt-3">
-        <div className="text-white text-sm mb-2">
-          {getPositionFullName(player.position)}
-        </div>
-
-        {/* Social Media Links */}
         {player.social && (
           <div className="flex justify-start space-x-4">
             {player.social.facebook && (
