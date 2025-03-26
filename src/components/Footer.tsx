@@ -43,12 +43,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-6">
-            <Link to="/" className="flex items-center mb-4">
+            <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
-                src="/lovable-uploads/db9bfed7-840d-4424-8b67-db803a905b71.png" 
-                alt="FAYNA TEAM"
-                className="h-14" 
+                src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
+                alt="ҐОТУЄМО ШТУКУ"
+                className="h-14 mr-3" 
               />
+              <span className="text-4xl">ҐОТУЄМО ШТУКУ</span>
             </Link>
             <p className="text-gray-300 leading-relaxed">
               Засновано {teamFoundedYear}. Віддані досконалості у футзалі.
@@ -131,12 +132,12 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-gray-800 text-center">
           <div className="mb-4 flex justify-center">
             <img 
-              src="/lovable-uploads/7c2bdc32-1498-4339-9d52-5eb4e64c0f45.png" 
-              alt="FAYNA TEAM Логотип" 
+              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
+              alt="ҐОТУЄМО ШТУКУ Логотип" 
               className="h-10 opacity-70" 
             />
           </div>
-          <p className="text-gray-400 text-sm">© {currentYear} FAYNA TEAM. Всі права захищені.</p>
+          <p className="text-gray-400 text-sm">© {currentYear} ҐОТУЄМО ШТУКУ. Всі права захищені.</p>
         </div>
       </div>
     </footer>

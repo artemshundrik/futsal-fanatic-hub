@@ -32,15 +32,9 @@ const Index = () => {
           <span className="inline-block py-2 px-4 bg-team-secondary text-white rounded-md text-sm font-medium uppercase tracking-wider mb-6 animate-scale-in">
             Ласкаво просимо на наш офіційний сайт
           </span>
-          
-          <div className="mb-4">
-            <img 
-              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
-              alt="ҐОТУЄМО ШТУКУ"
-              className="h-32 mx-auto"
-            />
-          </div>
-          
+          <h1 className="text-6xl md:text-8xl font-bebas mb-4 tracking-wider">
+            {teamName}
+          </h1>
           <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
             {teamSlogan}
           </p>
