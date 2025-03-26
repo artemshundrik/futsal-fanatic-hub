@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { format, isSameMonth, isSameDay, parseISO, addMonths, subMonths } from 'date-fns';
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -48,7 +49,7 @@ const Calendar = () => {
   const allEvents: CalendarEvent[] = [
     ...upcomingMatches.map(match => ({
       id: match.id,
-      type: 'match',
+      type: 'match' as const,
       date: match.date,
       time: match.time,
       location: match.location,
@@ -58,7 +59,7 @@ const Calendar = () => {
     })),
     ...upcomingTraining.map(training => ({
       id: training.id,
-      type: 'training',
+      type: 'training' as const,
       date: training.date,
       time: training.time,
       location: training.location,
@@ -138,7 +139,7 @@ const Calendar = () => {
                       className={`
                         h-9 w-full p-0 font-normal text-sm
                         ${!isCurrentMonth ? 'text-gray-400' : ''}
-                        ${isSelected ? 'bg-team-secondary/50 text-team-primary' : ''}
+                        ${isSelected ? 'bg-team-secondary/50 text-white' : ''}
                       `}
                       onClick={() => handleDateClick(day)}
                     >

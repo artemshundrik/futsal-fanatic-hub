@@ -53,12 +53,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Team colors
+        // Team colors updated to black and white palette
         team: {
-          primary: "#0B2545", // Deep navy blue
-          secondary: "#13C4A3", // Vibrant teal
-          light: "#F2F5F7", // Light gray
-          accent: "#FF304F", // Accent red for highlights
+          primary: "#000000", // Black
+          secondary: "#333333", // Dark gray
+          light: "#F5F5F5", // Light gray/off-white
+          accent: "#777777", // Medium gray
         },
       },
       borderRadius: {
