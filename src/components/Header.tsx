@@ -71,7 +71,7 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-bebas text-lg font-bold tracking-wide text-team-primary transition-all duration-300 hover:text-team-secondary relative ${
+              className={`font-bebas text-base font-bold tracking-wide text-team-primary transition-all duration-300 hover:text-team-secondary relative ${
                 location.pathname === link.path 
                 ? 'text-team-secondary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-team-accent' 
                 : 'hover:after:w-full after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-team-accent after:transition-all after:duration-300'
