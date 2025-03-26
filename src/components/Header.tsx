@@ -89,10 +89,10 @@ const Header = () => {
               className="h-8" 
             />
           </a>
-          <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" 
-              alt="Nike" 
+              src="/lovable-uploads/25342c6e-21a4-492d-91c4-01c142b6fa6f.png" 
+              alt="Minimal" 
               className="h-6" 
             />
           </a>
@@ -138,8 +138,8 @@ const Header = () => {
           <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer">
             <img src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" alt="Wookie" className="h-8" />
           </a>
-          <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike" className="h-6" />
+          <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer">
+            <img src="/lovable-uploads/25342c6e-21a4-492d-91c4-01c142b6fa6f.png" alt="Minimal" className="h-6" />
           </a>
           <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer">
             <img src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" alt="ToSHo Agency" className="h-8" />
