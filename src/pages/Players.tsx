@@ -12,7 +12,7 @@ const Players = () => {
         {/* Універсали section */}
         <div className="mb-20">
           <h2 className="text-team-accent text-3xl md:text-4xl font-bebas mb-10 tracking-wider">УНІВЕРСАЛИ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {players
               .filter(player => player.position === 'UN')
               .map(player => (
@@ -24,7 +24,7 @@ const Players = () => {
         {/* Голкіпери section */}
         <div>
           <h2 className="text-team-accent text-3xl md:text-4xl font-bebas mb-10 tracking-wider">ГОЛКІПЕРИ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {players
               .filter(player => player.position === 'GK')
               .map(player => (

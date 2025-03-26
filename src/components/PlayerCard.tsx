@@ -24,74 +24,80 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
   const playerImage = "public/lovable-uploads/51024c31-41f7-4022-8a86-273e102b414b.png";
 
   return (
-    <div className={`relative ${className}`}>
-      {/* Number and Name section */}
-      <div className="mb-4">
-        <div className="flex items-end">
-          <div className="text-white text-7xl md:text-8xl font-bold leading-none mr-4">
-            {player.number}
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="text-team-accent text-xl md:text-2xl font-bebas mb-1">
-              {player.name.split(' ')[0]}
-            </span>
-            <span className="text-white text-2xl md:text-3xl font-bebas">
-              {player.name.split(' ')[1] || ''}
-            </span>
-          </div>
-        </div>
-        <div className="text-white text-sm mt-1">
-          {getPositionFullName(player.position)}
+    <div className={`relative overflow-hidden rounded-lg ${className}`}>
+      {/* Player number in top-left corner */}
+      <div className="absolute top-2 left-2 z-10">
+        <div className="text-white text-7xl font-bold drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+          {player.number}
         </div>
       </div>
 
       {/* Player Image */}
-      <div className="w-full h-[400px] flex items-end justify-center overflow-hidden">
+      <div className="w-full h-[400px] flex items-center justify-center overflow-hidden bg-black">
         <img 
           src={playerImage} 
           alt={player.name} 
-          className="max-w-full h-auto object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Social Media Links */}
-      {player.social && (
-        <div className="flex justify-start space-x-4 mt-4">
-          {player.social.facebook && (
-            <a 
-              href={player.social.facebook} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-team-accent transition-colors"
-              aria-label={`${player.name}'s Facebook profile`}
-            >
-              <Facebook size={20} />
-            </a>
-          )}
-          {player.social.instagram && (
-            <a 
-              href={player.social.instagram} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-team-accent transition-colors"
-              aria-label={`${player.name}'s Instagram profile`}
-            >
-              <Instagram size={20} />
-            </a>
-          )}
-          {player.social.twitter && (
-            <a 
-              href={player.social.twitter} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-team-accent transition-colors"
-              aria-label={`${player.name}'s Twitter profile`}
-            >
-              <Twitter size={20} />
-            </a>
-          )}
+      {/* Player Name at bottom */}
+      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-4">
+        <div className="text-center">
+          <div className="text-white text-3xl font-bebas uppercase tracking-wide">
+            {player.name.split(' ')[0]}
+          </div>
+          <div className="text-white text-3xl font-bebas uppercase tracking-wide">
+            {player.name.split(' ')[1] || ''}
+          </div>
         </div>
-      )}
+      </div>
+
+      {/* Position info and social media moved to appear below the card */}
+      <div className="mt-3">
+        <div className="text-white text-sm mb-2">
+          {getPositionFullName(player.position)}
+        </div>
+
+        {/* Social Media Links */}
+        {player.social && (
+          <div className="flex justify-start space-x-4">
+            {player.social.facebook && (
+              <a 
+                href={player.social.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-team-accent transition-colors"
+                aria-label={`${player.name}'s Facebook profile`}
+              >
+                <Facebook size={20} />
+              </a>
+            )}
+            {player.social.instagram && (
+              <a 
+                href={player.social.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-team-accent transition-colors"
+                aria-label={`${player.name}'s Instagram profile`}
+              >
+                <Instagram size={20} />
+              </a>
+            )}
+            {player.social.twitter && (
+              <a 
+                href={player.social.twitter} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-team-accent transition-colors"
+                aria-label={`${player.name}'s Twitter profile`}
+              >
+                <Twitter size={20} />
+              </a>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
