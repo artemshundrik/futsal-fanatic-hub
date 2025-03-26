@@ -55,12 +55,14 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-3xl font-bebas text-team-primary tracking-wider flex items-center"
+          className="font-bebas text-team-primary tracking-wider flex items-center"
         >
-          <div className="w-10 h-10 bg-team-primary rounded-full flex items-center justify-center mr-2">
-            <span className="text-white text-xl font-bold">DF</span>
-          </div>
-          {teamName}
+          <img 
+            src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+            alt={teamName} 
+            className="h-12 mr-3" 
+          />
+          <span className="text-3xl">{teamName}</span>
         </Link>
 
         {/* Desktop navigation */}

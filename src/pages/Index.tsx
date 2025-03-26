@@ -29,6 +29,13 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              alt={teamName} 
+              className="h-32 md:h-40 animate-scale-in" 
+            />
+          </div>
           <span className="inline-block py-2 px-4 bg-team-secondary text-white rounded-md text-sm font-medium uppercase tracking-wider mb-6 animate-scale-in">
             Welcome to our official website
           </span>
@@ -102,6 +109,13 @@ const Index = () => {
       {/* Join Us Section */}
       <section className="py-20 bg-team-primary text-white">
         <div className="container mx-auto px-4 text-center">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              alt={teamName} 
+              className="h-16 mb-4" 
+            />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bebas mb-6 tracking-wider">
             Join Our Team
           </h2>
@@ -109,7 +123,7 @@ const Index = () => {
             We're always looking for passionate players to join our futsal family. Get in touch with us today!
           </p>
           <a 
-            href="mailto:info@dynamofutsal.com" 
+            href="mailto:info@faynateam.com" 
             className="inline-block py-4 px-8 bg-white text-team-primary font-medium rounded-md hover:bg-opacity-90 transition-all duration-300"
           >
             Contact Us

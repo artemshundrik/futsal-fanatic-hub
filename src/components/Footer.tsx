@@ -12,11 +12,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Link to="/" className="text-3xl font-bebas tracking-wider flex items-center mb-4">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-2">
-                <span className="text-team-primary text-xl font-bold">DF</span>
-              </div>
-              {teamName}
+            <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+                alt={teamName}
+                className="h-12 mr-3" 
+              />
+              <span className="text-3xl">{teamName}</span>
             </Link>
             <p className="mb-4 text-gray-300">
               Established {teamFoundedYear}. Committed to excellence in futsal.
@@ -58,7 +60,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 flex-shrink-0" />
-                <span>info@dynamofutsal.com</span>
+                <span>info@faynateam.com</span>
               </li>
             </ul>
           </div>
@@ -66,6 +68,13 @@ const Footer = () => {
 
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400">
           <p>© {currentYear} {teamName}. All rights reserved.</p>
+          <div className="mt-2 flex justify-center">
+            <img 
+              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              alt={`${teamName} Logo`} 
+              className="h-8 opacity-50" 
+            />
+          </div>
         </div>
       </div>
     </footer>
