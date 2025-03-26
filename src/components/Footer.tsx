@@ -46,10 +46,10 @@ const Footer = () => {
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
                 src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
-                alt="ҐОТУЄМО ШТУКУ"
+                alt="Fayna Team"
                 className="h-14 mr-3" 
               />
-              <span className="text-4xl">ҐОТУЄМО ШТУКУ</span>
+              <span className="text-4xl">Fayna Team</span>
             </Link>
             <p className="text-gray-300 leading-relaxed">
               Засновано {teamFoundedYear}. Віддані досконалості у футзалі.
@@ -133,11 +133,11 @@ const Footer = () => {
           <div className="mb-4 flex justify-center">
             <img 
               src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
-              alt="ҐОТУЄМО ШТУКУ Логотип" 
+              alt="Fayna Team Логотип" 
               className="h-10 opacity-70" 
             />
           </div>
-          <p className="text-gray-400 text-sm">© {currentYear} ҐОТУЄМО ШТУКУ. Всі права захищені.</p>
+          <p className="text-gray-400 text-sm">© {currentYear} Fayna Team. Всі права захищені.</p>
         </div>
       </div>
     </footer>
