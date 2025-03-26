@@ -97,11 +97,11 @@ const Header = () => {
               className="h-6" 
             />
           </a>
-          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png" 
-              alt="Adidas" 
-              className="h-6" 
+              src="/lovable-uploads/b11cb1ea-7d6b-4671-8716-7ac0f56dde06.png" 
+              alt="ToSHo Agency" 
+              className="h-8" 
             />
           </a>
         </div>
@@ -142,8 +142,8 @@ const Header = () => {
           <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike" className="h-6" />
           </a>
-          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png" alt="Adidas" className="h-6" />
+          <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer">
+            <img src="/lovable-uploads/b11cb1ea-7d6b-4671-8716-7ac0f56dde06.png" alt="ToSHo Agency" className="h-8" />
           </a>
         </div>
       </div>
