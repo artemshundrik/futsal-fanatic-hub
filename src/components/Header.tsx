@@ -98,7 +98,7 @@ const Header = () => {
           </a>
           <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
-              src="/lovable-uploads/b11cb1ea-7d6b-4671-8716-7ac0f56dde06.png" 
+              src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" 
               alt="ToSHo Agency" 
               className="h-8" 
             />
@@ -142,7 +142,7 @@ const Header = () => {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike" className="h-6" />
           </a>
           <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer">
-            <img src="/lovable-uploads/b11cb1ea-7d6b-4671-8716-7ac0f56dde06.png" alt="ToSHo Agency" className="h-8" />
+            <img src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" alt="ToSHo Agency" className="h-8" />
           </a>
         </div>
       </div>
