@@ -13,7 +13,7 @@ const Header = () => {
     { name: 'ГОЛОВНА', path: '/' },
     { name: 'КАЛЕНДАР', path: '/calendar' },
     { name: 'ГРАВЦІ', path: '/players' },
-    { name: 'КОМАНДА', path: '/team' },
+    { name: 'ФАН-ШОП', path: '/team' },
     { name: 'НОВИНИ', path: '/news' },
   ];
 
