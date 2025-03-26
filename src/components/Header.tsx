@@ -85,7 +85,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-4">
           <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
-              src="https://wookie.com.ua/wp-content/uploads/2020/12/wookie-new-logo.svg" 
+              src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" 
               alt="Wookie" 
               className="h-8" 
             />
@@ -137,7 +137,7 @@ const Header = () => {
         {/* Додаємо спонсорів у мобільне меню */}
         <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
           <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer">
-            <img src="https://wookie.com.ua/wp-content/uploads/2020/12/wookie-new-logo.svg" alt="Wookie" className="h-8" />
+            <img src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" alt="Wookie" className="h-8" />
           </a>
           <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike" className="h-6" />
