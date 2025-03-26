@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bebas mb-6 tracking-wider border-b border-white/10 pb-2">ШВИДКІ ПОСИЛАННЯ</h3>
+            <h3 className="font-bebas mb-6 tracking-wider border-b border-white/10 pb-2 text-lg font-extrabold">ШВИДКІ ПОСИЛАННЯ</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-team-accent transition-colors flex items-center">
