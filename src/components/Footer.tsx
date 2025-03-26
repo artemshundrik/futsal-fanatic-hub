@@ -66,7 +66,35 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400">
+        {/* Додаємо спонсорів у футер */}
+        <div className="mt-8 pt-6 border-t border-gray-800">
+          <h3 className="text-xl font-bebas mb-4 text-center tracking-wider">Наші Спонсори</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded flex items-center">
+              <img 
+                src="/lovable-uploads/17be1360-bd35-40d1-bdcb-0597a6d6a8b4.png" 
+                alt="Wookie" 
+                className="h-8" 
+              />
+            </a>
+            <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded flex items-center">
+              <img 
+                src="/lovable-uploads/b1d04dd8-ab26-49f3-b97f-e41bdba49b25.png" 
+                alt="Minimal" 
+                className="h-7" 
+              />
+            </a>
+            <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded flex items-center">
+              <img 
+                src="/lovable-uploads/19158e99-38f4-4df9-b6e7-b4dd708a514e.png" 
+                alt="ToSHo Agency" 
+                className="h-7" 
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-400">
           <p>© {currentYear} {teamName}. Всі права захищені.</p>
           <div className="mt-2 flex justify-center">
             <img 
