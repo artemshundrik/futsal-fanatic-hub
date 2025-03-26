@@ -95,7 +95,7 @@
   }
 
   .stat-card {
-    @apply rounded-lg p-4 border flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-team-accent;
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-100 flex flex-col items-center justify-center;
   }
 
   .mobile-menu-active {
@@ -110,15 +110,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-team-accent bg-opacity-70 rounded-full;
+  @apply bg-team-primary bg-opacity-70 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-team-accent;
+  @apply bg-team-primary;
 }
 
 /* Smooth page transitions */
