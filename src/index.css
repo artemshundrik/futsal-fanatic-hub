@@ -15,17 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 340 100% 32%;
+    --primary: 0 0% 10%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 100% 30%;
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 52 100% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 331 100% 55%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 0% 40%;
     --destructive-foreground: 0 0% 98%;
@@ -47,7 +47,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bebas tracking-wider uppercase;
+    @apply font-bebas tracking-wider;
   }
 }
 
@@ -71,39 +71,35 @@
   }
 
   .page-title {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bebas text-team-primary mb-8 uppercase;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bebas text-team-primary mb-8 tracking-wider;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bebas text-team-primary tracking-wider mb-6 uppercase;
+    @apply text-3xl md:text-4xl font-bebas text-team-primary tracking-wider mb-6;
   }
 
   .nav-link {
-    @apply relative text-lg transition-all duration-300 hover:text-team-accent relative;
+    @apply relative text-lg font-medium text-gray-800 transition-all duration-300 hover:text-team-secondary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-team-secondary after:transition-all after:duration-300 hover:after:w-full;
   }
 
   .btn-primary {
-    @apply bg-team-primary text-white hover:bg-opacity-90 py-3 px-6 rounded-none font-medium uppercase transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-team-primary text-white hover:bg-opacity-90 py-3 px-6 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center transform hover:translate-y-[-2px] active:translate-y-0;
   }
 
   .btn-secondary {
-    @apply bg-team-secondary text-white hover:bg-opacity-90 py-3 px-6 rounded-none font-medium uppercase transition-all duration-300 inline-flex items-center justify-center;
-  }
-
-  .btn-accent {
-    @apply bg-team-accent text-black hover:bg-opacity-90 py-3 px-6 rounded-none font-medium uppercase transition-all duration-300 inline-flex items-center justify-center;
+    @apply bg-team-accent text-white hover:bg-opacity-90 py-3 px-6 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center transform hover:translate-y-[-2px] active:translate-y-0;
   }
 
   .btn-outline {
-    @apply border-2 border-team-primary text-team-primary hover:bg-team-primary hover:text-white py-2 px-6 rounded-none font-medium uppercase transition-all duration-300 inline-flex items-center justify-center;
+    @apply border-2 border-team-primary text-team-primary hover:bg-team-primary hover:text-white py-3 px-6 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center;
   }
 
   .stat-card {
-    @apply bg-white rounded-none shadow-md p-6 border-l-4 border-team-primary flex flex-col items-center justify-center;
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-100 flex flex-col items-center justify-center;
   }
 
-  .fc-barcelona-gradient {
-    @apply bg-gradient-to-r from-team-primary via-team-primary to-team-secondary;
+  .mobile-menu-active {
+    @apply translate-x-0 opacity-100;
   }
 }
 

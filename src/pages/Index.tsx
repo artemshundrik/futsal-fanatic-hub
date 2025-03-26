@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar as CalendarIcon, Users, Newspaper, ChevronRight } from 'lucide-react';
+import { Calendar as CalendarIcon, Users, Newspaper } from 'lucide-react';
 import UpcomingMatch from '../components/UpcomingMatch';
 import PlayerCard from '../components/PlayerCard';
 import NewsCard from '../components/NewsCard';
@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <div className="animate-fade-in">
-      {/* Секція Героя в стилі Барселони */}
+      {/* Секція Героя */}
       <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <img 
@@ -25,20 +25,20 @@ const Index = () => {
             alt={teamName}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-team-primary/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-team-primary/80 to-team-primary/40"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10 text-white text-left md:ml-10 lg:ml-20">
-          <span className="inline-block py-2 px-4 bg-team-accent text-black text-sm font-bold uppercase tracking-wider mb-6 animate-scale-in">
-            Футзальна команда
+        <div className="container mx-auto px-4 relative z-10 text-white text-center">
+          <span className="inline-block py-2 px-4 bg-team-secondary text-white rounded-md text-sm font-medium uppercase tracking-wider mb-6 animate-scale-in">
+            Ласкаво просимо на наш офіційний сайт
           </span>
           <h1 className="text-6xl md:text-8xl font-bebas mb-4 tracking-wider">
             {teamName}
           </h1>
-          <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl">
+          <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto">
             {teamSlogan}
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link to="/team" className="btn-primary">
               <Users className="mr-2" size={20} />
               Команда
@@ -52,14 +52,9 @@ const Index = () => {
       </section>
 
       {/* Секція Наступного Матчу */}
-      <section className="py-10 bg-team-light">
+      <section className="py-16 bg-team-light">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="section-title mb-0 text-team-primary">НАСТУПНИЙ МАТЧ</h2>
-            <Link to="/calendar" className="flex items-center text-team-secondary hover:text-team-primary font-medium uppercase text-sm">
-              Всі матчі <ChevronRight size={16} />
-            </Link>
-          </div>
+          <h2 className="section-title text-center mb-10">Наступний Матч</h2>
           {upcomingMatches.length > 0 ? (
             <UpcomingMatch match={upcomingMatches[0]} className="max-w-4xl mx-auto" />
           ) : (
@@ -69,12 +64,12 @@ const Index = () => {
       </section>
 
       {/* Секція Топ-Гравців */}
-      <section className="py-10">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="section-title mb-0 text-team-primary">КРАЩІ ГРАВЦІ</h2>
-            <Link to="/players" className="flex items-center text-team-secondary hover:text-team-primary font-medium uppercase text-sm">
-              Всі Гравці <ChevronRight size={16} />
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="section-title mb-0">Кращі Гравці</h2>
+            <Link to="/players" className="btn-outline text-sm">
+              Всі Гравці
             </Link>
           </div>
           
@@ -86,13 +81,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Секція Останніх Новин у стилі Барселони */}
-      <section className="py-10 bg-team-light">
+      {/* Секція Останніх Новин */}
+      <section className="py-16 bg-team-light">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="section-title mb-0 text-team-primary">ОСТАННІ НОВИНИ</h2>
-            <Link to="/news" className="flex items-center text-team-secondary hover:text-team-primary font-medium uppercase text-sm">
-              Всі Новини <ChevronRight size={16} />
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="section-title mb-0">Останні Новини</h2>
+            <Link to="/news" className="btn-outline text-sm">
+              Всі Новини
             </Link>
           </div>
           
@@ -104,8 +99,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Секція Приєднуйтесь із градієнтним фоном */}
-      <section className="py-16 fc-barcelona-gradient text-white">
+      {/* Секція Приєднуйтесь */}
+      <section className="py-20 bg-team-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
             <img 
@@ -114,7 +109,7 @@ const Index = () => {
               className="h-16 mb-4" 
             />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bebas mb-6 tracking-wider uppercase">
+          <h2 className="text-4xl md:text-5xl font-bebas mb-6 tracking-wider">
             Приєднуйтесь до Команди
           </h2>
           <p className="text-xl max-w-2xl mx-auto mb-10">
@@ -122,7 +117,7 @@ const Index = () => {
           </p>
           <a 
             href="mailto:info@faynateam.com" 
-            className="inline-block py-4 px-8 bg-team-accent text-black font-bold uppercase rounded-none hover:bg-opacity-90 transition-all duration-300"
+            className="inline-block py-4 px-8 bg-white text-team-primary font-medium rounded-md hover:bg-opacity-90 transition-all duration-300"
           >
             Зв'язатися
           </a>

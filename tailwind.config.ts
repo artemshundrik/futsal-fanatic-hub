@@ -53,12 +53,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Team colors inspired by FC Barcelona
+        // Team colors updated to black and white palette with pink accent
         team: {
-          primary: "#a50044", // Barcelona primary color (deep red)
-          secondary: "#004d98", // Barcelona secondary color (blue)
-          light: "#F9F9F9", // Light background
-          accent: "#FFED02", // Barcelona accent color (yellow)
+          primary: "#000000", // Black
+          secondary: "#333333", // Dark gray
+          light: "#F5F5F5", // Light gray/off-white
+          accent: "#FF1795", // Bright pink accent
         },
       },
       borderRadius: {
