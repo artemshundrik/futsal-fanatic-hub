@@ -9,13 +9,43 @@ const Footer = () => {
 
   return (
     <footer className="bg-team-primary text-white">
+      {/* Top section with gradient overlay */}
+      <div className="relative overflow-hidden py-4 bg-gradient-to-r from-team-primary to-team-secondary">
+        <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-8 items-center">
+          <span className="font-bebas text-xl tracking-wider">НАШІ СПОНСОРИ</span>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 duration-200">
+              <img 
+                src="/lovable-uploads/17be1360-bd35-40d1-bdcb-0597a6d6a8b4.png" 
+                alt="Wookie" 
+                className="h-8" 
+              />
+            </a>
+            <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 duration-200">
+              <img 
+                src="/lovable-uploads/b1d04dd8-ab26-49f3-b97f-e41bdba49b25.png" 
+                alt="Minimal" 
+                className="h-7" 
+              />
+            </a>
+            <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 duration-200">
+              <img 
+                src="/lovable-uploads/19158e99-38f4-4df9-b6e7-b4dd708a514e.png" 
+                alt="ToSHo Agency" 
+                className="h-7" 
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Main footer content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-6">
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
-                src="/lovable-uploads/db5ef50d-8ab1-404b-a3ce-b0b22c55455c.png" 
+                src="/lovable-uploads/5bb8d635-f874-4827-b30d-b5f174306bfd.png" 
                 alt="Fayna Team"
                 className="h-14 mr-3" 
               />
@@ -102,7 +132,7 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-gray-800 text-center">
           <div className="mb-4 flex justify-center">
             <img 
-              src="/lovable-uploads/db5ef50d-8ab1-404b-a3ce-b0b22c55455c.png" 
+              src="/lovable-uploads/5bb8d635-f874-4827-b30d-b5f174306bfd.png" 
               alt="Fayna Team Логотип" 
               className="h-10 opacity-70" 
             />
