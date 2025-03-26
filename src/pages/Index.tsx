@@ -8,7 +8,7 @@ import NewsCard from '../components/NewsCard';
 import { teamName, teamSlogan, upcomingMatches, players, newsArticles } from '../data/sample-data';
 
 const Index = () => {
-  // Filter top players based on goals + assists
+  // Фільтруємо топ-гравців на основі голів + передач
   const topPlayers = [...players]
     .sort((a, b) => (b.stats.goals + b.stats.assists) - (a.stats.goals + a.stats.assists))
     .slice(0, 3);
@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Section */}
+      {/* Секція Героя */}
       <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <img 
@@ -29,15 +29,8 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
-          <div className="flex justify-center mb-6">
-            <img 
-              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
-              alt={teamName} 
-              className="h-32 md:h-40 animate-scale-in" 
-            />
-          </div>
           <span className="inline-block py-2 px-4 bg-team-secondary text-white rounded-md text-sm font-medium uppercase tracking-wider mb-6 animate-scale-in">
-            Welcome to our official website
+            Ласкаво просимо на наш офіційний сайт
           </span>
           <h1 className="text-6xl md:text-8xl font-bebas mb-4 tracking-wider">
             {teamName}
@@ -48,35 +41,35 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/team" className="btn-primary">
               <Users className="mr-2" size={20} />
-              Meet The Team
+              Команда
             </Link>
             <Link to="/calendar" className="btn-secondary">
               <CalendarIcon className="mr-2" size={20} />
-              View Schedule
+              Розклад
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Next Match Section */}
+      {/* Секція Наступного Матчу */}
       <section className="py-16 bg-team-light">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-10">Next Match</h2>
+          <h2 className="section-title text-center mb-10">Наступний Матч</h2>
           {upcomingMatches.length > 0 ? (
             <UpcomingMatch match={upcomingMatches[0]} className="max-w-4xl mx-auto" />
           ) : (
-            <div className="text-center text-gray-500">No upcoming matches scheduled</div>
+            <div className="text-center text-gray-500">Немає запланованих матчів</div>
           )}
         </div>
       </section>
 
-      {/* Top Players Section */}
+      {/* Секція Топ-Гравців */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="section-title mb-0">Top Players</h2>
+            <h2 className="section-title mb-0">Кращі Гравці</h2>
             <Link to="/players" className="btn-outline text-sm">
-              View All Players
+              Всі Гравці
             </Link>
           </div>
           
@@ -88,13 +81,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest News Section */}
+      {/* Секція Останніх Новин */}
       <section className="py-16 bg-team-light">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="section-title mb-0">Latest News</h2>
+            <h2 className="section-title mb-0">Останні Новини</h2>
             <Link to="/news" className="btn-outline text-sm">
-              View All News
+              Всі Новини
             </Link>
           </div>
           
@@ -106,7 +99,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Join Us Section */}
+      {/* Секція Приєднуйтесь */}
       <section className="py-20 bg-team-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
@@ -117,16 +110,16 @@ const Index = () => {
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bebas mb-6 tracking-wider">
-            Join Our Team
+            Приєднуйтесь до Команди
           </h2>
           <p className="text-xl max-w-2xl mx-auto mb-10">
-            We're always looking for passionate players to join our futsal family. Get in touch with us today!
+            Ми завжди шукаємо пристрасних гравців для нашої футзальної родини. Зв'яжіться з нами сьогодні!
           </p>
           <a 
             href="mailto:info@faynateam.com" 
             className="inline-block py-4 px-8 bg-white text-team-primary font-medium rounded-md hover:bg-opacity-90 transition-all duration-300"
           >
-            Contact Us
+            Зв'язатися
           </a>
         </div>
       </section>

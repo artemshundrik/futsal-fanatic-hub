@@ -21,7 +21,7 @@ const Footer = () => {
               <span className="text-3xl">{teamName}</span>
             </Link>
             <p className="mb-4 text-gray-300">
-              Established {teamFoundedYear}. Committed to excellence in futsal.
+              Засновано {teamFoundedYear}. Віддані досконалості у футзалі.
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-team-secondary transition-colors" aria-label="Facebook">
@@ -37,22 +37,22 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bebas mb-4 tracking-wider">Quick Links</h3>
+            <h3 className="text-2xl font-bebas mb-4 tracking-wider">Швидкі Посилання</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-team-secondary transition-colors">Home</Link></li>
-              <li><Link to="/calendar" className="text-gray-300 hover:text-team-secondary transition-colors">Calendar</Link></li>
-              <li><Link to="/players" className="text-gray-300 hover:text-team-secondary transition-colors">Players</Link></li>
-              <li><Link to="/team" className="text-gray-300 hover:text-team-secondary transition-colors">Team</Link></li>
-              <li><Link to="/news" className="text-gray-300 hover:text-team-secondary transition-colors">News</Link></li>
+              <li><Link to="/" className="text-gray-300 hover:text-team-secondary transition-colors">Головна</Link></li>
+              <li><Link to="/calendar" className="text-gray-300 hover:text-team-secondary transition-colors">Календар</Link></li>
+              <li><Link to="/players" className="text-gray-300 hover:text-team-secondary transition-colors">Гравці</Link></li>
+              <li><Link to="/team" className="text-gray-300 hover:text-team-secondary transition-colors">Команда</Link></li>
+              <li><Link to="/news" className="text-gray-300 hover:text-team-secondary transition-colors">Новини</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bebas mb-4 tracking-wider">Contact Us</h3>
+            <h3 className="text-2xl font-bebas mb-4 tracking-wider">Контакти</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-2 mt-1 flex-shrink-0" />
-                <span>123 Sportyvna St, Kyiv, Ukraine, 01001</span>
+                <span>вул. Спортивна 123, Київ, Україна, 01001</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 flex-shrink-0" />
@@ -67,11 +67,11 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-400">
-          <p>© {currentYear} {teamName}. All rights reserved.</p>
+          <p>© {currentYear} {teamName}. Всі права захищені.</p>
           <div className="mt-2 flex justify-center">
             <img 
               src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
-              alt={`${teamName} Logo`} 
+              alt={`${teamName} Логотип`} 
               className="h-8 opacity-50" 
             />
           </div>
