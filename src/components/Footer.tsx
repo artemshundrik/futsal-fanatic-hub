@@ -8,7 +8,7 @@ const Footer = () => {
       {/* Top section with gradient overlay */}
       <div className="relative overflow-hidden py-4 bg-gradient-to-r from-team-primary to-team-secondary">
         <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center gap-8 items-center">
-          <span className="font-bebas text-xl tracking-wider">НАШІ СПОНСОРИ</span>
+          <span className="font-bebas tracking-wider text-lg font-extrabold">НАШІ СПОНСОРИ</span>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 duration-200">
               <img src="/lovable-uploads/17be1360-bd35-40d1-bdcb-0597a6d6a8b4.png" alt="Wookie" className="h-8" />
