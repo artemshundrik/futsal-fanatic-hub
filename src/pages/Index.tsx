@@ -31,7 +31,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10 text-white text-center">
           <div className="flex justify-center mb-6">
             <img 
-              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
               alt={teamName} 
               className="h-32 md:h-40 animate-scale-in" 
             />
@@ -111,7 +111,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
             <img 
-              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
               alt={teamName} 
               className="h-16 mb-4" 
             />

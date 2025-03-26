@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
-                src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+                src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
                 alt={teamName}
                 className="h-12 mr-3" 
               />
@@ -70,7 +70,7 @@ const Footer = () => {
           <p>© {currentYear} {teamName}. All rights reserved.</p>
           <div className="mt-2 flex justify-center">
             <img 
-              src="/lovable-uploads/321cf6cb-1586-41e1-a5a5-3091882bf999.png" 
+              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
               alt={`${teamName} Logo`} 
               className="h-8 opacity-50" 
             />
