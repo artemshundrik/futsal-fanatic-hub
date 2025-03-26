@@ -48,8 +48,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-3'
-          : 'bg-team-primary/80 backdrop-blur-md py-5'
+          ? 'bg-white shadow-md py-2'
+          : 'bg-team-primary text-white py-4'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -60,20 +60,22 @@ const Header = () => {
           <img 
             src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
             alt={teamName} 
-            className="h-12 mr-3" 
+            className="h-10 mr-3" 
           />
           <span className="text-3xl">{teamName}</span>
         </Link>
 
         {/* Десктопна навігація */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link ${isScrolled ? 'text-team-primary' : 'text-white'} ${
-                location.pathname === link.path ? 'text-team-secondary after:w-full' : ''
-              }`}
+              className={`nav-link ${
+                isScrolled ? 'text-team-primary hover:text-team-accent' : 'text-white hover:text-team-accent'
+              } ${
+                location.pathname === link.path ? 'font-semibold' : 'font-medium'
+              } uppercase tracking-wider text-sm py-2`}
             >
               {link.name}
             </Link>
@@ -86,13 +88,13 @@ const Header = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Перемикач меню"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Мобільна навігація */}
       <div
-        className={`fixed inset-0 bg-white z-40 flex flex-col pt-24 px-8 md:hidden transform transition-all duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-team-primary z-40 flex flex-col pt-20 px-8 md:hidden transform transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -100,8 +102,8 @@ const Header = () => {
           <Link
             key={link.path}
             to={link.path}
-            className={`text-2xl font-bebas py-4 border-b border-gray-100 ${
-              location.pathname === link.path ? 'text-team-secondary' : 'text-team-primary'
+            className={`text-xl uppercase font-medium py-4 border-b border-gray-700 ${
+              location.pathname === link.path ? 'text-team-accent' : 'text-white'
             }`}
           >
             {link.name}
