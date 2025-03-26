@@ -1,260 +1,212 @@
-
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, MapPin, Trophy } from 'lucide-react';
-import { format, parseISO, isSameDay } from 'date-fns';
+import { format, isSameMonth, isSameDay, parseISO, addMonths, subMonths } from 'date-fns';
+import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 import { 
-  upcomingMatches, 
-  pastMatches, 
-  upcomingTraining, 
-  Match, 
-  TrainingSession 
-} from '../data/sample-data';
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { upcomingMatches, pastMatches, upcomingTraining } from '../data/sample-data';
 
-type EventType = 'match' | 'training';
-
-interface CalendarEvent {
+type CalendarEvent = {
   id: number;
-  type: EventType;
-  title: string;
+  type: 'match' | 'training';
   date: string;
   time: string;
   location: string;
-  details?: string;
-  isMatch?: boolean;
+  opponent?: string;
   isHome?: boolean;
-  result?: {
-    teamScore: number;
-    opponentScore: number;
-  };
-  completed?: boolean;
-}
+  competition?: string;
+};
 
 const Calendar = () => {
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [view, setView] = useState<'list' | 'calendar'>('list');
-  const [filter, setFilter] = useState<'all' | 'matches' | 'training'>('all');
+  const [filter, setFilter] = useState('all');
 
-  // Convert matches and training sessions to a unified format
-  const formatMatches = (matches: Match[]): CalendarEvent[] => {
-    return matches.map(match => ({
+  const handleDateClick = (day: Date) => {
+    setSelectedDate(day);
+  };
+
+  const goToPreviousMonth = () => {
+    setCurrentDate(subMonths(currentDate, 1));
+  };
+
+  const goToNextMonth = () => {
+    setCurrentDate(addMonths(currentDate, 1));
+  };
+
+  const handleFilterChange = (value: string) => {
+    setFilter(value);
+    setSelectedDate(null);
+  };
+
+  const allEvents: CalendarEvent[] = [
+    ...upcomingMatches.map(match => ({
       id: match.id,
       type: 'match',
-      title: `${match.isHome ? 'Dynamo Futsal vs ' + match.opponent : match.opponent + ' vs Dynamo Futsal'}`,
       date: match.date,
       time: match.time,
       location: match.location,
-      details: match.competition,
-      isMatch: true,
+      opponent: match.opponent,
       isHome: match.isHome,
-      result: match.result,
-      completed: match.completed,
-    }));
-  };
-
-  const formatTraining = (trainingSessions: TrainingSession[]): CalendarEvent[] => {
-    return trainingSessions.map(session => ({
-      id: session.id,
+      competition: match.competition,
+    })),
+    ...upcomingTraining.map(training => ({
+      id: training.id,
       type: 'training',
-      title: 'Team Training',
-      date: session.date,
-      time: session.time,
-      location: session.location,
-      details: session.focus,
-      isMatch: false,
-    }));
-  };
+      date: training.date,
+      time: training.time,
+      location: training.location,
+    })),
+  ];
 
-  // Combine all events
-  const allEvents: CalendarEvent[] = [
-    ...formatMatches(upcomingMatches),
-    ...formatMatches(pastMatches),
-    ...formatTraining(upcomingTraining),
-  ].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const filteredEvents = filter === 'all'
+    ? allEvents
+    : allEvents.filter(event => event.type === filter);
 
-  // Filter events based on the selected filter
-  const filteredEvents = allEvents.filter(event => {
-    if (filter === 'all') return true;
-    if (filter === 'matches' && event.type === 'match') return true;
-    if (filter === 'training' && event.type === 'training') return true;
-    return false;
-  });
+  const daysInMonth = [];
+  const startDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+  const endDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
 
-  // Filter events based on selected date
-  const selectedDateEvents = selectedDate
-    ? filteredEvents.filter(event => 
-        isSameDay(parseISO(event.date), selectedDate)
-      )
-    : filteredEvents;
+  // Populate daysInMonth array
+  for (let i = 1; i <= endDate.getDate(); i++) {
+    daysInMonth.push(new Date(currentDate.getFullYear(), currentDate.getMonth(), i));
+  }
 
-  // Group events by date for list view
-  const groupEventsByDate = (events: CalendarEvent[]) => {
-    const grouped: { [key: string]: CalendarEvent[] } = {};
-    
-    events.forEach(event => {
-      const dateKey = event.date;
-      if (!grouped[dateKey]) {
-        grouped[dateKey] = [];
-      }
-      grouped[dateKey].push(event);
-    });
-    
-    // Sort dates
-    return Object.keys(grouped)
-      .sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
-      .map(date => ({ 
-        date,
-        events: grouped[date].sort((a, b) => 
-          a.time.localeCompare(b.time)
-        )
-      }));
-  };
-
-  const groupedEvents = groupEventsByDate(selectedDateEvents);
-
-  const EventCard = ({ event }: { event: CalendarEvent }) => {
-    const eventDate = parseISO(event.date);
-    
-    return (
-      <div 
-        className={`
-          p-4 rounded-lg shadow-sm mb-4 transition-all duration-300 
-          ${event.type === 'match' 
-            ? 'border-l-4 border-team-primary bg-white hover:shadow-md' 
-            : 'border-l-4 border-team-secondary bg-white hover:shadow-md'
-          }
-        `}
-      >
-        <div className="flex items-start">
-          <div className="bg-team-light rounded-lg p-2 mr-4 flex flex-col items-center justify-center">
-            <span className="text-xs text-gray-500">{format(eventDate, 'MMM')}</span>
-            <span className="text-xl font-bold text-team-primary">{format(eventDate, 'dd')}</span>
-          </div>
-          
-          <div className="flex-grow">
-            <h3 className="font-bebas text-xl text-team-primary mb-1">{event.title}</h3>
-            
-            <div className="flex flex-wrap text-sm text-gray-600 mb-2">
-              <div className="flex items-center mr-4 mb-1">
-                <Calendar className="w-4 h-4 mr-1 text-team-secondary" />
-                <span>{format(eventDate, 'EEEE, MMMM d, yyyy')}</span>
-              </div>
-              
-              <div className="flex items-center mr-4 mb-1">
-                <CalendarIcon className="w-4 h-4 mr-1 text-team-secondary" />
-                <span>{event.time}</span>
-              </div>
-              
-              <div className="flex items-center mb-1">
-                <MapPin className="w-4 h-4 mr-1 text-team-secondary" />
-                <span>{event.location}</span>
-              </div>
-            </div>
-            
-            {event.details && (
-              <div className="flex items-center text-sm mb-2">
-                <Trophy className="w-4 h-4 mr-1 text-team-secondary" />
-                <span>{event.details}</span>
-              </div>
-            )}
-            
-            {event.type === 'match' && event.completed && event.result && (
-              <div className="mt-2 bg-team-light p-2 rounded-md inline-block">
-                <span className="font-semibold">
-                  Result: {event.isHome 
-                    ? `Dynamo Futsal ${event.result.teamScore} - ${event.result.opponentScore} ${event.title.split(' vs ')[1]}`
-                    : `${event.title.split(' vs ')[0]} ${event.result.opponentScore} - ${event.result.teamScore} Dynamo Futsal`
-                  }
-                </span>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  };
+  const dayEvents = selectedDate
+    ? filteredEvents.filter(event => isSameDay(parseISO(event.date), selectedDate))
+    : [];
 
   return (
-    <div className="page-container pt-28">
-      <h1 className="page-title text-center">
-        Matches & Training Calendar
-      </h1>
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-4xl md:text-5xl font-bebas text-team-primary mb-2">Team Calendar</h1>
+      <p className="text-gray-600 mb-8">View our upcoming matches and training sessions</p>
       
-      <div className="mb-8 flex flex-col sm:flex-row justify-between items-center">
-        <div className="flex space-x-2 mb-4 sm:mb-0">
-          <button 
-            className={`px-4 py-2 rounded-md transition-all ${filter === 'all' ? 'bg-team-primary text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-            onClick={() => setFilter('all')}
-          >
-            All Events
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-md transition-all ${filter === 'matches' ? 'bg-team-primary text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-            onClick={() => setFilter('matches')}
-          >
-            Matches
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-md transition-all ${filter === 'training' ? 'bg-team-primary text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-            onClick={() => setFilter('training')}
-          >
-            Training
-          </button>
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center">
+          <Button variant="outline" size="icon" onClick={goToPreviousMonth}>
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <h2 className="mx-4 text-xl font-semibold">
+            {format(currentDate, 'MMMM yyyy')}
+          </h2>
+          <Button variant="outline" size="icon" onClick={goToNextMonth}>
+            <ChevronRight className="h-4 w-4" />
+          </Button>
         </div>
-        
-        <div className="flex space-x-2">
-          <button 
-            className={`px-4 py-2 rounded-md transition-all ${view === 'list' ? 'bg-team-primary text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-            onClick={() => setView('list')}
-          >
-            List View
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-md transition-all ${view === 'calendar' ? 'bg-team-primary text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
-            onClick={() => setView('calendar')}
-          >
-            Calendar View
-          </button>
-        </div>
+
+        <Select value={filter} onValueChange={handleFilterChange}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Filter by" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Events</SelectItem>
+            <SelectItem value="match">Matches</SelectItem>
+            <SelectItem value="training">Training Sessions</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       
-      {view === 'list' ? (
-        <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-          {groupedEvents.length > 0 ? (
-            groupedEvents.map(group => (
-              <div key={group.date} className="mb-6">
-                <h3 className="font-bebas text-2xl text-team-primary mb-4">
-                  {format(parseISO(group.date), 'EEEE, MMMM d, yyyy')}
-                </h3>
-                
-                {group.events.map(event => (
-                  <EventCard key={`${event.type}-${event.id}`} event={event} />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
+        <div className="lg:col-span-2">
+          <Card>
+            <div className="p-6">
+              <h2 className="text-2xl font-bebas text-team-primary mb-4">
+                {format(currentDate, 'MMMM yyyy')}
+              </h2>
+              
+              <div className="grid grid-cols-7 gap-1">
+                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((dayName) => (
+                  <div key={dayName} className="text-center text-gray-500 py-1">
+                    {dayName}
+                  </div>
                 ))}
+                
+                {daysInMonth.map((day, index) => {
+                  const isCurrentMonth = isSameMonth(day, currentDate);
+                  const isSelected = selectedDate && isSameDay(day, selectedDate);
+
+                  return (
+                    <Button
+                      key={index}
+                      variant="ghost"
+                      className={`
+                        h-9 w-full p-0 font-normal text-sm
+                        ${!isCurrentMonth ? 'text-gray-400' : ''}
+                        ${isSelected ? 'bg-team-secondary/50 text-team-primary' : ''}
+                      `}
+                      onClick={() => handleDateClick(day)}
+                    >
+                      {format(day, 'd')}
+                    </Button>
+                  );
+                })}
               </div>
-            ))
-          ) : (
-            <div className="text-center py-16">
-              <CalendarIcon className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-500 mb-2">No events found</h3>
-              <p className="text-gray-400">
-                Try changing your filters or select another date
-              </p>
             </div>
-          )}
+          </Card>
         </div>
-      ) : (
-        <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-          <p className="text-center text-gray-500 py-6">
-            Calendar view coming soon...
-          </p>
+        
+        <div>
+          <Card>
+            <div className="p-6">
+              <h2 className="text-2xl font-bebas text-team-primary mb-4">
+                {selectedDate ? format(selectedDate, 'd MMMM yyyy') : 'Select a date'}
+              </h2>
+              
+              {!dayEvents.length && (
+                <p className="text-gray-500">No events scheduled for this day</p>
+              )}
+              
+              {dayEvents.map((event) => (
+                <div 
+                  key={event.id} 
+                  className={`p-4 rounded-md mb-3 ${
+                    event.type === 'match' 
+                      ? event.isHome 
+                        ? 'bg-team-primary/10 border-l-4 border-team-primary' 
+                        : 'bg-team-accent/10 border-l-4 border-team-accent'
+                      : 'bg-team-secondary/10 border-l-4 border-team-secondary'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`text-xs font-semibold px-2 py-1 rounded ${
+                      event.type === 'match' 
+                        ? event.isHome 
+                          ? 'bg-team-primary text-white' 
+                          : 'bg-team-accent text-white'
+                        : 'bg-team-secondary text-white'
+                    }`}>
+                      {event.type === 'match' 
+                        ? event.isHome ? 'Home Match' : 'Away Match' 
+                        : 'Training'}
+                    </span>
+                    <span className="text-gray-600">{event.time}</span>
+                  </div>
+                  
+                  <h3 className="font-semibold mb-1">
+                    {event.type === 'match' 
+                      ? `${event.isHome ? 'FAYNA TEAM vs ' : ''} ${event.opponent} ${!event.isHome ? ' vs FAYNA TEAM' : ''}`
+                      : 'Team Training'}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-sm">
+                    {event.location}
+                    {event.type === 'match' && event.competition && (
+                      <span className="ml-2 text-xs bg-gray-200 px-2 py-1 rounded">
+                        {event.competition}
+                      </span>
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
-      )}
-      
-      <div className="bg-team-primary text-white p-8 rounded-lg text-center">
-        <h2 className="text-3xl font-bebas mb-4">Need the full schedule?</h2>
-        <p className="mb-6">Download our full season calendar to your device</p>
-        <button className="bg-white text-team-primary hover:bg-opacity-90 py-3 px-6 rounded-md font-medium transition-all duration-300">
-          Download Calendar (iCal)
-        </button>
       </div>
     </div>
   );

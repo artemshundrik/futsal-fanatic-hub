@@ -1,5 +1,5 @@
 
-export const teamName = "Dynamo Futsal";
+export const teamName = "FAYNA TEAM";
 export const teamSlogan = "Passion, Teamwork, Victory";
 export const teamFoundedYear = 2018;
 
