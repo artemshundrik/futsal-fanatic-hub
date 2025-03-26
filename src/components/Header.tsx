@@ -59,7 +59,7 @@ const Header = () => {
           className="font-bebas text-team-primary tracking-wider flex items-center"
         >
           <img 
-            src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
+            src="/lovable-uploads/71157fb4-3b3b-43f8-9646-14a416281488.png" 
             alt={teamName} 
             className="h-16" 
           />
