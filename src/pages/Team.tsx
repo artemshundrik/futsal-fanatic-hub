@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { players } from '../data/sample-data';
 import PlayerCard from '../components/PlayerCard';
@@ -31,7 +32,7 @@ const Team = () => {
           alt={teamName} 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-team-primary/80 to-team-primary/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-team-primary/80 to-team-accent/40"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-6xl md:text-7xl text-white font-bebas tracking-wider">
             Team Roster
@@ -58,7 +59,7 @@ const Team = () => {
               key={pos.code}
               className={`px-6 py-3 rounded-md font-bebas text-xl tracking-wide transition-all ${
                 selectedPosition === pos.code 
-                  ? 'bg-team-primary text-white' 
+                  ? 'bg-team-accent text-white' 
                   : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
               }`}
               onClick={() => setSelectedPosition(pos.code)}
@@ -105,23 +106,23 @@ const Team = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="stat-card">
               <span className="text-gray-500 text-sm">Total Players</span>
-              <span className="text-4xl font-bebas text-team-primary">{players.length}</span>
+              <span className="text-4xl font-bebas text-team-accent">{players.length}</span>
             </div>
             <div className="stat-card">
               <span className="text-gray-500 text-sm">Total Goals</span>
-              <span className="text-4xl font-bebas text-team-primary">
+              <span className="text-4xl font-bebas text-team-accent">
                 {players.reduce((total, player) => total + player.stats.goals, 0)}
               </span>
             </div>
             <div className="stat-card">
               <span className="text-gray-500 text-sm">Total Assists</span>
-              <span className="text-4xl font-bebas text-team-primary">
+              <span className="text-4xl font-bebas text-team-accent">
                 {players.reduce((total, player) => total + player.stats.assists, 0)}
               </span>
             </div>
             <div className="stat-card">
               <span className="text-gray-500 text-sm">Avg. Attendance</span>
-              <span className="text-4xl font-bebas text-team-primary">
+              <span className="text-4xl font-bebas text-team-accent">
                 {Math.round(players.reduce((total, player) => 
                   total + (player.stats.matchesPlayed / player.stats.totalMatches * 100), 0) / players.length)}%
               </span>

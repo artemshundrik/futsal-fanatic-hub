@@ -53,12 +53,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Team colors updated to black and white palette
+        // Team colors updated to black and white palette with pink accent
         team: {
           primary: "#000000", // Black
           secondary: "#333333", // Dark gray
           light: "#F5F5F5", // Light gray/off-white
-          accent: "#777777", // Medium gray
+          accent: "#FF1795", // Bright pink accent
         },
       },
       borderRadius: {
