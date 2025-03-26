@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
-                src="/lovable-uploads/5bb8d635-f874-4827-b30d-b5f174306bfd.png" 
+                src="/lovable-uploads/695c4a2c-ca98-48a1-aa36-7ab4008953d3.png" 
                 alt="Fayna Team"
                 className="h-14 mr-3" 
               />
@@ -132,7 +132,7 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-gray-800 text-center">
           <div className="mb-4 flex justify-center">
             <img 
-              src="/lovable-uploads/5bb8d635-f874-4827-b30d-b5f174306bfd.png" 
+              src="/lovable-uploads/695c4a2c-ca98-48a1-aa36-7ab4008953d3.png" 
               alt="Fayna Team Логотип" 
               className="h-10 opacity-70" 
             />
