@@ -53,9 +53,10 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Логотип зліва */}
         <Link 
           to="/" 
-          className={`font-bebas text-team-primary tracking-wider flex items-center`}
+          className="font-bebas text-team-primary tracking-wider flex items-center"
         >
           <img 
             src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
@@ -65,8 +66,8 @@ const Header = () => {
           <span className="text-3xl">{teamName}</span>
         </Link>
 
-        {/* Десктопна навігація */}
-        <nav className="hidden md:flex space-x-8">
+        {/* Центрована десктопна навігація */}
+        <nav className="hidden md:flex space-x-8 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -79,6 +80,31 @@ const Header = () => {
             </Link>
           ))}
         </nav>
+
+        {/* Логотипи спонсорів справа */}
+        <div className="hidden md:flex items-center space-x-4">
+          <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <img 
+              src="https://wookie.com.ua/wp-content/uploads/2020/12/wookie-new-logo.svg" 
+              alt="Wookie" 
+              className="h-8" 
+            />
+          </a>
+          <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" 
+              alt="Nike" 
+              className="h-6" 
+            />
+          </a>
+          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png" 
+              alt="Adidas" 
+              className="h-6" 
+            />
+          </a>
+        </div>
 
         {/* Кнопка мобільного меню */}
         <button
@@ -107,6 +133,19 @@ const Header = () => {
             {link.name}
           </Link>
         ))}
+        
+        {/* Додаємо спонсорів у мобільне меню */}
+        <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
+          <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer">
+            <img src="https://wookie.com.ua/wp-content/uploads/2020/12/wookie-new-logo.svg" alt="Wookie" className="h-8" />
+          </a>
+          <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="Nike" className="h-6" />
+          </a>
+          <a href="https://www.adidas.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1280px-Adidas_Logo.svg.png" alt="Adidas" className="h-6" />
+          </a>
+        </div>
       </div>
     </header>
   );
