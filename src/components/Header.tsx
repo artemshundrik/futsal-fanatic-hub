@@ -10,11 +10,11 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Головна', path: '/' },
-    { name: 'Календар', path: '/calendar' },
-    { name: 'Гравці', path: '/players' },
-    { name: 'Команда', path: '/team' },
-    { name: 'Новини', path: '/news' },
+    { name: 'ГОЛОВНА', path: '/' },
+    { name: 'КАЛЕНДАР', path: '/calendar' },
+    { name: 'ГРАВЦІ', path: '/players' },
+    { name: 'КОМАНДА', path: '/team' },
+    { name: 'НОВИНИ', path: '/news' },
   ];
 
   useEffect(() => {
@@ -71,8 +71,10 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link text-team-primary ${
-                location.pathname === link.path ? 'text-team-secondary after:w-full' : ''
+              className={`font-bebas text-lg font-bold tracking-wide text-team-primary transition-all duration-300 hover:text-team-secondary relative ${
+                location.pathname === link.path 
+                ? 'text-team-secondary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-team-accent' 
+                : 'hover:after:w-full after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-team-accent after:transition-all after:duration-300'
               }`}
             >
               {link.name}
@@ -126,7 +128,7 @@ const Header = () => {
             key={link.path}
             to={link.path}
             className={`text-2xl font-bebas py-4 border-b border-gray-100 ${
-              location.pathname === link.path ? 'text-team-secondary' : 'text-team-primary'
+              location.pathname === link.path ? 'text-team-accent' : 'text-team-primary'
             }`}
           >
             {link.name}
