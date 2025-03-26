@@ -36,10 +36,10 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
       {/* Player Name at bottom */}
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
         <div className="text-center">
-          <div className="text-white text-2xl font-bebas uppercase tracking-wide">
+          <div className="text-white text-2xl font-bebas font-bold uppercase tracking-wide">
             {player.name.split(' ')[0]}
           </div>
-          <div className="text-white text-2xl font-bebas uppercase tracking-wide">
+          <div className="text-white text-2xl font-bebas font-bold uppercase tracking-wide">
             {player.name.split(' ')[1] || ''}
           </div>
         </div>
