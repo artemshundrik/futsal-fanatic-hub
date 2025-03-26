@@ -53,7 +53,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Логотип зліва */}
+        {/* Логотип зліва - видалили текстовий елемент */}
         <Link 
           to="/" 
           className="font-bebas text-team-primary tracking-wider flex items-center"
@@ -61,9 +61,8 @@ const Header = () => {
           <img 
             src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
             alt={teamName} 
-            className="h-12 mr-3" 
+            className="h-12" 
           />
-          <span className="text-3xl">{teamName}</span>
         </Link>
 
         {/* Центрована десктопна навігація */}
