@@ -35,8 +35,8 @@ const Index = () => {
           
           <div className="mb-4">
             <img 
-              src="/lovable-uploads/db9bfed7-840d-4424-8b67-db803a905b71.png" 
-              alt="FAYNA TEAM"
+              src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
+              alt="ҐОТУЄМО ШТУКУ"
               className="h-32 mx-auto"
             />
           </div>
