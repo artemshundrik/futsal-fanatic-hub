@@ -5,7 +5,7 @@ import { Calendar as CalendarIcon, Users, Newspaper } from 'lucide-react';
 import UpcomingMatch from '../components/UpcomingMatch';
 import PlayerCard from '../components/PlayerCard';
 import NewsCard from '../components/NewsCard';
-import { teamName, teamSlogan, teamImage, upcomingMatches, players, newsArticles } from '../data/sample-data';
+import { teamName, teamSlogan, upcomingMatches, players, newsArticles } from '../data/sample-data';
 
 const Index = () => {
   // Filter top players based on goals + assists
@@ -21,7 +21,7 @@ const Index = () => {
       <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <img 
-            src={teamImage} 
+            src="/lovable-uploads/7ddcd836-4422-4254-8a68-5939ab823aea.png" 
             alt={teamName}
             className="w-full h-full object-cover"
           />

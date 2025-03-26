@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { players } from '../data/sample-data';
 import PlayerCard from '../components/PlayerCard';
-import { teamName, teamImage } from '../data/sample-data';
+import { teamName } from '../data/sample-data';
 
 const Team = () => {
   const [selectedPosition, setSelectedPosition] = useState<string | null>(null);
@@ -28,7 +27,7 @@ const Team = () => {
       {/* Team Banner */}
       <section className="relative h-80 overflow-hidden">
         <img 
-          src={teamImage} 
+          src="/lovable-uploads/7ddcd836-4422-4254-8a68-5939ab823aea.png" 
           alt={teamName} 
           className="w-full h-full object-cover"
         />
