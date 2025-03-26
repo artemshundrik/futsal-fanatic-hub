@@ -48,14 +48,14 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-3'
-          : 'bg-team-primary/80 backdrop-blur-md py-5'
+          ? 'bg-white shadow-md py-3'
+          : 'bg-white py-5'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link 
           to="/" 
-          className={`font-bebas ${isScrolled ? 'text-team-primary' : 'text-white'} tracking-wider flex items-center`}
+          className={`font-bebas text-team-primary tracking-wider flex items-center`}
         >
           <img 
             src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
@@ -71,7 +71,7 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link ${isScrolled ? 'text-team-primary' : 'text-white'} ${
+              className={`nav-link text-team-primary ${
                 location.pathname === link.path ? 'text-team-secondary after:w-full' : ''
               }`}
             >
@@ -82,7 +82,7 @@ const Header = () => {
 
         {/* Кнопка мобільного меню */}
         <button
-          className={`md:hidden ${isScrolled ? 'text-team-primary' : 'text-white'}`}
+          className="md:hidden text-team-primary"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Перемикач меню"
         >
