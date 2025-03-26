@@ -20,8 +20,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     }
   };
 
-  // Use placeholder transparent player image for now
-  const playerImage = "public/lovable-uploads/4012323a-766e-4bdb-9d0f-c5a64aa6f783.png";
+  // Use the uploaded player image as placeholder
+  const playerImage = "public/lovable-uploads/b73385fa-07e5-440e-970e-b5d2b789f49e.png";
 
   return (
     <div className={`relative ${className}`}>
