@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
@@ -45,7 +44,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
               <img 
-                src="/lovable-uploads/695c4a2c-ca98-48a1-aa36-7ab4008953d3.png" 
+                src="/lovable-uploads/db5ef50d-8ab1-404b-a3ce-b0b22c55455c.png" 
                 alt="Fayna Team"
                 className="h-14 mr-3" 
               />
@@ -132,7 +131,7 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-gray-800 text-center">
           <div className="mb-4 flex justify-center">
             <img 
-              src="/lovable-uploads/695c4a2c-ca98-48a1-aa36-7ab4008953d3.png" 
+              src="/lovable-uploads/db5ef50d-8ab1-404b-a3ce-b0b22c55455c.png" 
               alt="Fayna Team Логотип" 
               className="h-10 opacity-70" 
             />
