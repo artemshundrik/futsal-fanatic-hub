@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-6">
             <Link to="/" className="font-bebas tracking-wider flex items-center mb-4">
-              <img src="/lovable-uploads/db5ef50d-8ab1-404b-a3ce-b0b22c55455c.png" alt="Fayna Team" className="h-14 mr-3" />
+              <img alt="Fayna Team" className="h-14 mr-3" src="/lovable-uploads/90ccb9d8-0569-46cd-aa07-564bef7a710d.png" />
               
             </Link>
             <p className="text-gray-300 leading-relaxed">
