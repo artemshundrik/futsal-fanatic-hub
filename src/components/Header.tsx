@@ -53,7 +53,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Логотип зліва - зменшений розмір на 20% */}
+        {/* Логотип зліва - збільшений розмір */}
         <Link 
           to="/" 
           className="font-bebas text-team-primary tracking-wider flex items-center"
@@ -61,7 +61,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/c744b744-a8d1-4f9c-a717-676e35620d9e.png" 
             alt={teamName} 
-            className="h-12" 
+            className="h-16" 
           />
         </Link>
 
@@ -82,27 +82,27 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Логотипи спонсорів справа - зменшені розміри на 20% */}
+        {/* Логотипи спонсорів справа - зменшені розміри */}
         <div className="hidden md:flex items-center space-x-3">
           <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
               src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" 
               alt="Wookie" 
-              className="h-4.8" 
+              className="h-6" 
             />
           </a>
           <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
               src="/lovable-uploads/25342c6e-21a4-492d-91c4-01c142b6fa6f.png" 
               alt="Minimal" 
-              className="h-4" 
+              className="h-5" 
             />
           </a>
           <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img 
               src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" 
               alt="ToSHo Agency" 
-              className="h-4.8" 
+              className="h-6" 
             />
           </a>
         </div>
@@ -135,16 +135,16 @@ const Header = () => {
           </Link>
         ))}
         
-        {/* Зменшені логотипи спонсорів у мобільному меню на 20% */}
+        {/* Зменшені логотипи спонсорів у мобільному меню */}
         <div className="flex justify-between items-center mt-8 pt-4 border-t border-gray-100">
           <a href="https://wookie.com.ua/" target="_blank" rel="noopener noreferrer">
-            <img src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" alt="Wookie" className="h-4.8" />
+            <img src="/lovable-uploads/ebd1c9df-c27b-4c0d-b1cf-40c450737893.png" alt="Wookie" className="h-6" />
           </a>
           <a href="https://minimal.com/" target="_blank" rel="noopener noreferrer">
-            <img src="/lovable-uploads/25342c6e-21a4-492d-91c4-01c142b6fa6f.png" alt="Minimal" className="h-4" />
+            <img src="/lovable-uploads/25342c6e-21a4-492d-91c4-01c142b6fa6f.png" alt="Minimal" className="h-5" />
           </a>
           <a href="https://tosho.agency/" target="_blank" rel="noopener noreferrer">
-            <img src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" alt="ToSHo Agency" className="h-4.8" />
+            <img src="/lovable-uploads/be9f4c7d-9e8b-4e37-9c39-f3054dc401a0.png" alt="ToSHo Agency" className="h-6" />
           </a>
         </div>
       </div>
