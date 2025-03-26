@@ -20,8 +20,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     }
   };
 
-  // Use the uploaded player image as placeholder
-  const playerImage = "public/lovable-uploads/b73385fa-07e5-440e-970e-b5d2b789f49e.png";
+  // Use the uploaded LeBron James image as placeholder
+  const playerImage = "public/lovable-uploads/8314811b-f664-4fcf-916b-0e63abe77445.png";
 
   return (
     <div className={`relative ${className}`}>
