@@ -5,13 +5,11 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 interface PlayerCardProps {
   player: Player;
-  showStats?: boolean;
   className?: string;
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({ 
-  player, 
-  showStats = false,
+  player,
   className = '' 
 }) => {
   const getPositionFullName = (pos: string) => {
@@ -22,61 +20,43 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     }
   };
 
+  // Use placeholder transparent player image for now
+  const playerImage = "public/lovable-uploads/4012323a-766e-4bdb-9d0f-c5a64aa6f783.png";
+
   return (
-    <div className={`group relative bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:scale-[1.02] ${className}`}>
-      <div className="relative h-72 overflow-hidden">
-        <img 
-          src={player.image} 
-          alt={player.name} 
-          className="w-full h-full object-cover filter grayscale transition-all duration-300 group-hover:grayscale-0"
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-80"></div>
-        
-        {/* Номер гравця */}
-        <div className="absolute top-4 left-4 font-bebas text-white text-4xl opacity-80">
-          {player.number}
+    <div className={`relative ${className}`}>
+      {/* Number and Name section */}
+      <div className="mb-4">
+        <div className="flex items-end">
+          <div className="text-white text-7xl md:text-8xl font-bold leading-none mr-4">
+            {player.number}
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-team-accent text-xl md:text-2xl font-bebas mb-1">
+              {player.name.split(' ')[0]}
+            </span>
+            <span className="text-white text-2xl md:text-3xl font-bebas">
+              {player.name.split(' ')[1] || ''}
+            </span>
+          </div>
         </div>
-        
-        {/* Ім'я гравця */}
-        <div className="absolute bottom-4 left-0 w-full text-white px-4">
-          <p className="text-sm font-semibold bg-team-accent px-3 py-1 rounded-full inline-block mb-2">
-            {getPositionFullName(player.position)}
-          </p>
-          <h3 className="font-bebas text-3xl tracking-wider">{player.name}</h3>
+        <div className="text-white text-sm mt-1">
+          {getPositionFullName(player.position)}
         </div>
       </div>
 
-      {/* Опціональна статистика */}
-      {showStats && (
-        <div className="bg-black p-4">
-          <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="stat-card bg-gray-800 border-gray-700">
-              <span className="text-gray-400 text-xs uppercase tracking-wider">Голи</span>
-              <span className="text-4xl font-bebas text-team-accent">{player.stats.goals}</span>
-            </div>
-            <div className="stat-card bg-gray-800 border-gray-700">
-              <span className="text-gray-400 text-xs uppercase tracking-wider">Передачі</span>
-              <span className="text-4xl font-bebas text-team-accent">{player.stats.assists}</span>
-            </div>
-            {player.position === 'GK' && (
-              <>
-                <div className="stat-card bg-gray-800 border-gray-700">
-                  <span className="text-gray-400 text-xs uppercase tracking-wider">Сейви</span>
-                  <span className="text-4xl font-bebas text-team-accent">{player.stats.saves}</span>
-                </div>
-                <div className="stat-card bg-gray-800 border-gray-700">
-                  <span className="text-gray-400 text-xs uppercase tracking-wider">Сухі матчі</span>
-                  <span className="text-4xl font-bebas text-team-accent">{player.stats.cleanSheets}</span>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      )}
+      {/* Player Image */}
+      <div className="w-full h-[400px] flex items-end justify-center overflow-hidden">
+        <img 
+          src={playerImage} 
+          alt={player.name} 
+          className="max-w-full h-auto object-contain"
+        />
+      </div>
 
-      {/* Соціальні мережі */}
+      {/* Social Media Links */}
       {player.social && (
-        <div className="px-4 py-3 bg-gray-800 border-t border-gray-700 flex justify-center space-x-4">
+        <div className="flex justify-start space-x-4 mt-4">
           {player.social.facebook && (
             <a 
               href={player.social.facebook} 
