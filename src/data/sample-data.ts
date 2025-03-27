@@ -1,4 +1,3 @@
-
 export const teamName = "FAYNA TEAM";
 export const teamSlogan = "Passion, Teamwork, Victory";
 export const teamFoundedYear = 2024;
@@ -63,9 +62,9 @@ export interface NewsArticle {
 export const players: Player[] = [
   {
     id: 1,
-    name: "Андрій Шевченко",
+    name: "Макар Махньов",
     position: "UN",
-    number: 7,
+    number: 88,
     image: "https://images.unsplash.com/photo-1564135624576-c5c88640f235?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 23,
@@ -81,7 +80,7 @@ export const players: Player[] = [
   },
   {
     id: 2,
-    name: "Олександр Шовковський",
+    name: "Дмитро Павлов",
     position: "GK",
     number: 1,
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -100,9 +99,9 @@ export const players: Player[] = [
   },
   {
     id: 3,
-    name: "Анатолій Тимощук",
+    name: "Денис Чорний",
     position: "UN",
-    number: 4,
+    number: 9,
     image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=2188&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 5,
@@ -114,9 +113,9 @@ export const players: Player[] = [
   },
   {
     id: 4,
-    name: "Олег Лужний",
+    name: "Антон Шевченко",
     position: "UN",
-    number: 2,
+    number: 7,
     image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 1,
@@ -131,9 +130,9 @@ export const players: Player[] = [
   },
   {
     id: 5,
-    name: "Руслан Ротань",
+    name: "Денис Кириченко",
     position: "UN",
-    number: 8,
+    number: 10,
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 7,
@@ -145,9 +144,9 @@ export const players: Player[] = [
   },
   {
     id: 6,
-    name: "Сергій Ребров",
+    name: "Владислав Панченко",
     position: "UN",
-    number: 11,
+    number: 19,
     image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 18,
@@ -159,9 +158,9 @@ export const players: Player[] = [
   },
   {
     id: 7,
-    name: "Євген Коноплянка",
+    name: "Ігор Сорока",
     position: "UN",
-    number: 10,
+    number: 77,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 9,
@@ -173,9 +172,9 @@ export const players: Player[] = [
   },
   {
     id: 8,
-    name: "Дмитро Чигринський",
+    name: "Тарас Марченко",
     position: "UN",
-    number: 3,
+    number: 11,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
     stats: {
       goals: 2,
@@ -185,6 +184,64 @@ export const players: Player[] = [
       totalMatches: 20,
     },
   },
+  {
+    id: 9,
+    name: "Кирило Гончар",
+    position: "UN", 
+    number: 23,
+    image: "https://images.unsplash.com/photo-1639747280804-dd2d6b3d88ac?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
+    stats: {
+      goals: 12,
+      assists: 6,
+      fouls: 11,
+      matchesPlayed: 15,
+      totalMatches: 20,
+    },
+  },
+  {
+    id: 10,
+    name: "Владислав Кривега",
+    position: "UN",
+    number: 16,
+    image: "https://images.unsplash.com/photo-1568707043650-eb03f2536825?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
+    stats: {
+      goals: 8,
+      assists: 9,
+      fouls: 6,
+      matchesPlayed: 16,
+      totalMatches: 20,
+    },
+  },
+  {
+    id: 11,
+    name: "Нікіта Василенко",
+    position: "GK",
+    number: 35,
+    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
+    stats: {
+      goals: 0,
+      assists: 0,
+      saves: 89,
+      cleanSheets: 5,
+      fouls: 2,
+      matchesPlayed: 12,
+      totalMatches: 20,
+    },
+  },
+  {
+    id: 12,
+    name: "Ігор Шабля",
+    position: "UN",
+    number: 8,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3",
+    stats: {
+      goals: 14,
+      assists: 7,
+      fouls: 13,
+      matchesPlayed: 18,
+      totalMatches: 20,
+    },
+  }
 ];
 
 export const upcomingMatches: Match[] = [
