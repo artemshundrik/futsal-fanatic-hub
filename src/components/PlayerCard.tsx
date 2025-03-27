@@ -12,8 +12,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
   player,
   className = '' 
 }) => {
-  // Use the uploaded Dovbyk image as placeholder
-  const playerImage = "public/lovable-uploads/51024c31-41f7-4022-8a86-273e102b414b.png";
+  // Use the newly uploaded player image
+  const playerImage = "public/lovable-uploads/5ce695a9-f2df-4a76-8fd1-fb1b83c73048.png";
 
   return (
     <div className={`relative overflow-hidden rounded-lg ${className}`}>
