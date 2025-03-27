@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
@@ -71,7 +72,7 @@ const Footer = () => {
               <li>
                 <Link to="/team" className="text-gray-300 hover:text-team-accent transition-colors flex items-center">
                   <span className="mr-2">•</span>
-                  <span>Команда</span>
+                  <span>Фан-шоп</span>
                 </Link>
               </li>
               <li>
