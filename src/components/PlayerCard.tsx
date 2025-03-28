@@ -12,9 +12,6 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
   player,
   className = '' 
 }) => {
-  // Fix the image path by removing "public/" prefix
-  const playerImage = "/lovable-uploads/5ce695a9-f2df-4a76-8fd1-fb1b83c73048.png";
-
   return (
     <div className={`relative overflow-hidden rounded-lg ${className}`}>
       {/* Player number in top-left corner */}
@@ -27,7 +24,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
       {/* Player Image */}
       <div className="w-full h-[320px] flex items-center justify-center overflow-hidden bg-black">
         <img 
-          src={playerImage} 
+          src={player.image} 
           alt={player.name} 
           className="w-full h-full object-cover"
         />
