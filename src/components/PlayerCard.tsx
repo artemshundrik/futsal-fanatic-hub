@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Player } from '../data/sample-data';
+import { Player } from '../data/types';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 interface PlayerCardProps {
