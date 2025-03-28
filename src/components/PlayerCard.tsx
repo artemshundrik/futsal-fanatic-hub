@@ -26,7 +26,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         <img 
           src={player.image} 
           alt={player.name} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
