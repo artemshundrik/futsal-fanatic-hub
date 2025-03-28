@@ -289,10 +289,10 @@ export const players: Player[] = [
   },
   {
     id: 16,
-    name: "Супруненко",
+    name: "Андрій Супруненко",
     position: "UN",
     number: 22,
-    image: "/lovable-uploads/5ce695a9-f2df-4a76-8fd1-fb1b83c73048.png", // Using a default image as we don't have his specific image
+    image: "/lovable-uploads/5ce695a9-f2df-4a76-8fd1-fb1b83c73048.png", // Using existing image as we don't have his specific image
     stats: {
       goals: 5,
       assists: 4,
