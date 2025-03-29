@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { format, isSameMonth, isSameDay, parseISO, addMonths, subMonths } from 'date-fns';
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -11,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { upcomingMatches, pastMatches, upcomingTraining } from '../data/sample-data';
+import { upcomingMatches, pastMatches, upcomingTraining } from '../data';
 
 type CalendarEvent = {
   id: number;

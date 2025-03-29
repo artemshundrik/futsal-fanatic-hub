@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar as CalendarIcon, Users, Newspaper } from 'lucide-react';
 import UpcomingMatch from '../components/UpcomingMatch';
 import PlayerCard from '../components/PlayerCard';
 import NewsCard from '../components/NewsCard';
-import { teamName, teamSlogan, upcomingMatches, players, newsArticles } from '../data/sample-data';
+import { teamName, teamSlogan, upcomingMatches, players, newsArticles } from '../data';
 
 const Index = () => {
   // Фільтруємо топ-гравців на основі голів + передач

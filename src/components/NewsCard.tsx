@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NewsArticle } from '../data/sample-data';
+import { NewsArticle } from '../data';
 import { format, parseISO } from 'date-fns';
 import { Link } from 'react-router-dom';
 

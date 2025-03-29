@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { newsArticles, NewsArticle } from '../data/sample-data';
+import { newsArticles, NewsArticle } from '../data';
 import NewsCard from '../components/NewsCard';
 import { Search } from 'lucide-react';
 

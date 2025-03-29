@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { players } from '../data/sample-data';
+import { players } from '../data';
 import PlayerCard from '../components/PlayerCard';
 
 const Players = () => {

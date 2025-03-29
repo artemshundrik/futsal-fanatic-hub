@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
-import { teamName, teamFoundedYear } from '../data/sample-data';
+import { teamName, teamFoundedYear } from '../data';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-team-primary text-white">
@@ -113,4 +114,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;

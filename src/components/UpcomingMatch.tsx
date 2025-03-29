@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
-import { Match } from '../data/sample-data';
+import { Match } from '../data';
 import { format, parseISO } from 'date-fns';
 
 interface UpcomingMatchProps {
