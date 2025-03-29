@@ -58,11 +58,9 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         </HoverCardTrigger>
         
         <HoverCardContent 
-          className="absolute inset-0 p-0 border-0 w-full h-[320px] rounded-lg overflow-hidden"
-          align="center"
-          forceMount
+          className="w-full h-[320px] rounded-lg overflow-hidden p-0 border-0"
         >
-          <div className="absolute inset-0 bg-black/85 flex flex-col p-5 h-full text-white rounded-lg border border-team-accent">
+          <div className="absolute inset-0 bg-black/85 flex flex-col p-5 h-full text-white rounded-lg border border-team-accent animate-scale-in">
             <div className="mb-4">
               <h3 className="text-2xl font-bebas tracking-wider text-team-accent mb-1">{player.name}</h3>
               <div className="flex items-center justify-between">
@@ -110,7 +108,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
               </div>
             </div>
             
-            {player.social && (
+            {player.social && Object.values(player.social).some(link => link) && (
               <div className="flex justify-end space-x-4 mt-3">
                 {player.social.facebook && (
                   <a 
