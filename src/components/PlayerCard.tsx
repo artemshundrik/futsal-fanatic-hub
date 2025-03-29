@@ -92,86 +92,95 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         </div>
       </HoverCardTrigger>
       
-      <HoverCardContent className="w-80 bg-black text-white border border-team-accent p-4">
-        <div className="flex justify-between items-start mb-3">
+      <HoverCardContent 
+        className="w-full h-[320px] bg-black text-white border border-team-accent p-4 shadow-lg overflow-y-auto z-50"
+        sideOffset={5}
+        align="center"
+        side="top"
+      >
+        <div className="flex flex-col h-full justify-between">
           <div>
-            <h3 className="text-xl font-bebas tracking-wider text-team-accent">{player.name}</h3>
-            <p className="text-sm text-gray-300">
-              {player.position === 'GK' ? 'Голкіпер' : 'Універсал'} | #{player.number}
-            </p>
-          </div>
-          <div className="text-3xl font-bold text-team-accent">#{player.number}</div>
-        </div>
-        
-        <div className="border-t border-gray-700 my-3 pt-3">
-          <h4 className="text-lg font-bebas mb-2 text-team-accent">СТАТИСТИКА</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-gray-400">Матчі:</span>
-              <span className="font-semibold">{player.stats.matchesPlayed}/{player.stats.totalMatches}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Голи:</span>
-              <span className="font-semibold">{player.stats.goals}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Передачі:</span>
-              <span className="font-semibold">{player.stats.assists}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Фоли:</span>
-              <span className="font-semibold">{player.stats.fouls}</span>
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <h3 className="text-2xl font-bebas tracking-wider text-team-accent">{player.name}</h3>
+                <p className="text-sm text-gray-300">
+                  {player.position === 'GK' ? 'Голкіпер' : 'Універсал'} | #{player.number}
+                </p>
+              </div>
+              <div className="text-4xl font-bold text-team-accent">#{player.number}</div>
             </div>
             
-            {player.position === 'GK' && player.stats.saves !== undefined && (
-              <div className="flex justify-between">
-                <span className="text-gray-400">Сейви:</span>
-                <span className="font-semibold">{player.stats.saves}</span>
+            <div className="border-t border-gray-700 my-4 pt-4">
+              <h4 className="text-xl font-bebas mb-3 text-team-accent tracking-wider">СТАТИСТИКА</h4>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Матчі:</span>
+                  <span className="font-semibold">{player.stats.matchesPlayed}/{player.stats.totalMatches}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Голи:</span>
+                  <span className="font-semibold">{player.stats.goals}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Передачі:</span>
+                  <span className="font-semibold">{player.stats.assists}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Фоли:</span>
+                  <span className="font-semibold">{player.stats.fouls}</span>
+                </div>
+                
+                {player.position === 'GK' && player.stats.saves !== undefined && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Сейви:</span>
+                    <span className="font-semibold">{player.stats.saves}</span>
+                  </div>
+                )}
+                {player.position === 'GK' && player.stats.cleanSheets !== undefined && (
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Сухі матчі:</span>
+                    <span className="font-semibold">{player.stats.cleanSheets}</span>
+                  </div>
+                )}
               </div>
-            )}
-            {player.position === 'GK' && player.stats.cleanSheets !== undefined && (
-              <div className="flex justify-between">
-                <span className="text-gray-400">Сухі матчі:</span>
-                <span className="font-semibold">{player.stats.cleanSheets}</span>
-              </div>
-            )}
+            </div>
           </div>
+          
+          {player.social && (
+            <div className="flex justify-end space-x-4 mt-3">
+              {player.social.facebook && (
+                <a 
+                  href={player.social.facebook} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-team-accent transition-colors"
+                >
+                  <Facebook size={24} />
+                </a>
+              )}
+              {player.social.instagram && (
+                <a 
+                  href={player.social.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-team-accent transition-colors"
+                >
+                  <Instagram size={24} />
+                </a>
+              )}
+              {player.social.twitter && (
+                <a 
+                  href={player.social.twitter} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-team-accent transition-colors"
+                >
+                  <Twitter size={24} />
+                </a>
+              )}
+            </div>
+          )}
         </div>
-        
-        {player.social && (
-          <div className="flex justify-end space-x-3 mt-3">
-            {player.social.facebook && (
-              <a 
-                href={player.social.facebook} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-team-accent transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-            )}
-            {player.social.instagram && (
-              <a 
-                href={player.social.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-team-accent transition-colors"
-              >
-                <Instagram size={18} />
-              </a>
-            )}
-            {player.social.twitter && (
-              <a 
-                href={player.social.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-team-accent transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
-            )}
-          </div>
-        )}
       </HoverCardContent>
     </HoverCard>
   );
