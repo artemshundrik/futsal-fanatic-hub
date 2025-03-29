@@ -20,7 +20,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <div className={`relative overflow-hidden rounded-lg ${className} cursor-pointer`}>
+        <div className={`relative overflow-hidden rounded-lg ${className} cursor-pointer w-full h-[320px]`}>
           {/* Player number in top-left corner */}
           <div className="absolute top-2 left-2 z-10">
             <div className="text-white text-6xl font-bold drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
@@ -48,53 +48,11 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
               </div>
             </div>
           </div>
-
-          {/* Social Media Links - without position info */}
-          <div className="mt-2">
-            {player.social && (
-              <div className="flex justify-start space-x-4">
-                {player.social.facebook && (
-                  <a 
-                    href={player.social.facebook} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-team-accent transition-colors"
-                    aria-label={`${player.name}'s Facebook profile`}
-                  >
-                    <Facebook size={16} />
-                  </a>
-                )}
-                {player.social.instagram && (
-                  <a 
-                    href={player.social.instagram} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-team-accent transition-colors"
-                    aria-label={`${player.name}'s Instagram profile`}
-                  >
-                    <Instagram size={16} />
-                  </a>
-                )}
-                {player.social.twitter && (
-                  <a 
-                    href={player.social.twitter} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-team-accent transition-colors"
-                    aria-label={`${player.name}'s Twitter profile`}
-                  >
-                    <Twitter size={16} />
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
         </div>
       </HoverCardTrigger>
       
       <HoverCardContent 
-        className="w-full h-[320px] bg-black text-white border border-team-accent p-4 shadow-lg overflow-y-auto z-50"
-        sideOffset={5}
+        className="w-full h-[320px] bg-black text-white border border-team-accent p-4 shadow-lg overflow-y-auto"
         align="center"
         side="top"
       >
