@@ -28,17 +28,17 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     <div className={`relative overflow-hidden rounded-lg ${className} cursor-pointer group animate-fade-in-up`}>
       {/* Player number in top-left corner */}
       <div className="absolute top-2 left-2 z-20">
-        <div className="text-white text-5xl font-bold drop-shadow-xl pointer-events-none" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+        <div className="text-white text-5xl font-bold drop-shadow-xl pointer-events-none font-adicup" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
           {player.number}
         </div>
       </div>
 
       {/* Player Image */}
-      <div className="w-full h-[320px] flex items-center justify-center overflow-hidden bg-black">
+      <div className="w-full h-[320px] flex items-center justify-center overflow-hidden bg-black relative">
         <img 
           src={player.image} 
           alt={player.name} 
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
@@ -64,7 +64,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
               </h3>
               <div className="flex flex-wrap items-center gap-2 mt-1">
                 <span
-                  className={`px-2 py-1 rounded text-xs font-medium uppercase ${
+                  className={`px-2 py-1 rounded text-xs font-bold uppercase ${
                     player.position === 'GK' ? 'bg-green-700 text-white' : 'bg-blue-700 text-white'
                   }`}
                 >

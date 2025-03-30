@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Adicup Q 2022';
+  src: url('/fonts/AdiCupQ2022.woff2') format('woff2');
+  src: url('/fonts/AdiCupQ2022.woff') format('woff');
+}
+
+.font-adicup {
+  font-family: 'Adicup Q 2022', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,6 +110,10 @@
 
   .mobile-menu-active {
     @apply translate-x-0 opacity-100;
+  }
+
+  .font-adicup {
+    font-family: 'Adicup Q 2022', sans-serif;
   }
 }
 

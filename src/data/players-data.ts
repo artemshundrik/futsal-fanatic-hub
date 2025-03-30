@@ -6,7 +6,7 @@ export const players: Player[] = [
     name: "Назар Гнібеда",
     position: "GK",
     number: 81,
-    image: "/lovable-uploads/d8d5c784-cf81-4baf-8413-2aac62701149.png",
+    image: "/lovable-uploads/81 - Гнібєда.png",
     stats: {
       goals: 0,
       assists: 0,
@@ -33,7 +33,7 @@ export const players: Player[] = [
     name: "Артем Головченко",
     position: "GK",
     number: 71,
-    image: "/lovable-uploads/44a695d0-9ee9-4a8e-a4f2-9877e640ef94.png",
+    image: "/lovable-uploads/71 - Головченко.png",
     stats: {
       goals: 0,
       assists: 0,
@@ -58,7 +58,7 @@ export const players: Player[] = [
     name: "Руслан Кашкарьов",
     position: "GK",
     number: 33,
-    image: "/lovable-uploads/02ec082d-b39f-476a-b886-f862052d60fb.png",
+    image: "/lovable-uploads/33 - Кашкарьов.png",
     stats: {
       goals: 0,
       assists: 0,
@@ -80,7 +80,7 @@ export const players: Player[] = [
     name: "Юрій Глущук",
     position: "UN",
     number: 99,
-    image: "/lovable-uploads/c38b9d7d-1818-4870-b1d8-db9e489b0cf1.png",
+    image: "/lovable-uploads/99 - Глущук.png",
     stats: {
       goals: 8,
       assists: 10,
@@ -103,7 +103,7 @@ export const players: Player[] = [
     name: "Віктор Зінчук",
     position: "UN",
     number: 5,
-    image: "/lovable-uploads/bbc0050d-1fbf-4bfa-87f0-7c6f089875e1.png",
+    image: "/lovable-uploads/5 - Зінчук.png",
     stats: {
       goals: 12,
       assists: 7,
@@ -123,7 +123,7 @@ export const players: Player[] = [
     name: "Сергій Осадчий",
     position: "UN",
     number: 18,
-    image: "/lovable-uploads/1241a268-3ae0-463f-af49-10804eaca1d0.png",
+    image: "/lovable-uploads/18 - Осадчий.png",
     stats: {
       goals: 5,
       assists: 9,
@@ -143,7 +143,7 @@ export const players: Player[] = [
     name: "Сергій Осаульчук",
     position: "UN",
     number: 19,
-    image: "/lovable-uploads/567d377c-b560-4b8c-90fa-aa0c8dba8174.png",
+    image: "/lovable-uploads/19 - Осаульчук.png",
     stats: {
       goals: 9,
       assists: 13,
@@ -164,7 +164,7 @@ export const players: Player[] = [
     name: "Вадим Пазин",
     position: "UN",
     number: 8,
-    image: "/lovable-uploads/11a5d807-bb6d-4e10-b332-04477d60e07e.png",
+    image: "/lovable-uploads/8 - Пазін.png",
     stats: {
       goals: 6,
       assists: 5,
@@ -184,7 +184,7 @@ export const players: Player[] = [
     name: "Роман Подзізей",
     position: "UN", 
     number: 13,
-    image: "/lovable-uploads/8d9ebe03-0e8b-4892-af1b-58ebfa4b15aa.png",
+    image: "/lovable-uploads/13 - Подзізей.png",
     stats: {
       goals: 7,
       assists: 8,
@@ -204,7 +204,7 @@ export const players: Player[] = [
     name: "Анатолій Пристайчук",
     position: "UN",
     number: 7,
-    image: "/lovable-uploads/a42c93d0-9a00-4179-8b54-99eff2065cac.png",
+    image: "/lovable-uploads/7 - Пристайчук.png",
     stats: {
       goals: 4,
       assists: 11,
@@ -224,7 +224,7 @@ export const players: Player[] = [
     name: "Ігор Сірик",
     position: "UN",
     number: 10,
-    image: "/lovable-uploads/52cb9c20-2d52-44cc-b916-2b2a658729a0.png",
+    image: "/lovable-uploads/10 - Сірик.png",
     stats: {
       goals: 10,
       assists: 3,
@@ -244,7 +244,7 @@ export const players: Player[] = [
     name: "Владислав Скляр",
     position: "UN",
     number: 3,
-    image: "/lovable-uploads/1ff00437-0566-4946-8b37-a214894e4201.png",
+    image: "/lovable-uploads/3 - Скляр.png",
     stats: {
       goals: 14,
       assists: 7,
@@ -265,7 +265,7 @@ export const players: Player[] = [
     name: "Олександр Стеблюк",
     position: "UN",
     number: 12,
-    image: "/lovable-uploads/0703cc6a-0f79-4ddc-8920-4ae46237601c.png",
+    image: "/lovable-uploads/12 - Стеблюк.png",
     stats: {
       goals: 11,
       assists: 6,
@@ -285,7 +285,7 @@ export const players: Player[] = [
     name: "Владислав Хом'яков",
     position: "UN",
     number: 17,
-    image: "/lovable-uploads/e138faae-e069-45d7-bfb9-dcd519d81995.png",
+    image: "/lovable-uploads/17 - Хом'яков.png",
     stats: {
       goals: 3,
       assists: 12,
@@ -305,7 +305,7 @@ export const players: Player[] = [
     name: "Артем Шундрик",
     position: "UN",
     number: 4,
-    image: "/lovable-uploads/c38b9d7d-1818-4870-b1d8-db9e489b0cf1.png",
+    image: "/lovable-uploads/4 - Шундрик.png",
     stats: {
       goals: 15,
       assists: 4,
@@ -328,7 +328,7 @@ export const players: Player[] = [
     name: "Андрій Супруненко",
     position: "UN",
     number: 11,
-    image: "/lovable-uploads/5ce695a9-f2df-4a76-8fd1-fb1b83c73048.png",
+    image: "/lovable-uploads/11 - Супруненко.png",
     stats: {
       goals: 5,
       assists: 4,
