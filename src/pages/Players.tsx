@@ -1,9 +1,17 @@
-
 import React from 'react';
 import { players } from '../data';
 import PlayerCard from '../components/PlayerCard';
 
 const Players = () => {
+  const getMax = (fn: (p: typeof players[0]) => number) =>
+    Math.max(...players.map(p => fn(p) ?? 0));
+
+  const maxGoals = getMax(p => p.stats.goals);
+  const maxAssists = getMax(p => p.stats.assists);
+  const maxSaves = getMax(p => p.stats.saves);
+  const maxYellow = getMax(p => p.stats.yellowCards);
+  const maxMatches = getMax(p => p.stats.matchesPlayed);
+
   return (
     <div className="bg-black min-h-screen pt-28 pb-16 px-4">
       <div className="container mx-auto">
@@ -16,7 +24,15 @@ const Players = () => {
             {players
               .filter(player => player.position === 'GK')
               .map(player => (
-                <PlayerCard key={player.id} player={player} />
+                <PlayerCard
+                  key={player.id}
+                  player={player}
+                  isTopScorer={player.stats.goals === maxGoals}
+                  isTopAssistant={player.stats.assists === maxAssists}
+                  isTopGoalkeeper={player.stats.saves === maxSaves}
+                  isTopFouls={player.stats.yellowCards === maxYellow}
+                  isMostMatches={player.stats.matchesPlayed === maxMatches}
+                />
               ))}
           </div>
         </div>
@@ -28,7 +44,15 @@ const Players = () => {
             {players
               .filter(player => player.position === 'UN')
               .map(player => (
-                <PlayerCard key={player.id} player={player} />
+                <PlayerCard
+                  key={player.id}
+                  player={player}
+                  isTopScorer={player.stats.goals === maxGoals}
+                  isTopAssistant={player.stats.assists === maxAssists}
+                  isTopGoalkeeper={player.stats.saves === maxSaves}
+                  isTopFouls={player.stats.yellowCards === maxYellow}
+                  isMostMatches={player.stats.matchesPlayed === maxMatches}
+                />
               ))}
           </div>
         </div>
