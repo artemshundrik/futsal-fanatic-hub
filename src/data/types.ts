@@ -14,12 +14,21 @@ export interface Player {
     fouls: number;
     matchesPlayed: number;
     totalMatches: number;
+    yellowCards?: number;
+    redCards?: number;
+    mvpCount?: number;
   };
   social?: {
     instagram?: string;
     facebook?: string;
     twitter?: string;
   };
+  birthDay?: number;
+  birthMonth?: number;
+  birthYear?: number;
+  bio?: string;
+  isCaptain?: boolean;
+  role?: string;
 }
 
 export interface Match {
