@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar as CalendarIcon, Users, Newspaper } from 'lucide-react';
+import { Calendar as CalendarIcon, Users, Newspaper, Instagram, Youtube } from 'lucide-react';
 import UpcomingMatch from '../components/UpcomingMatch';
 import PlayerCard from '../components/PlayerCard';
 import NewsCard from '../components/NewsCard';
@@ -50,6 +51,28 @@ const Index = () => {
               <CalendarIcon className="mr-2" size={20} />
               Розклад
             </Link>
+          </div>
+          
+          {/* Соціальні мережі */}
+          <div className="flex justify-center mt-8 gap-6">
+            <a 
+              href="https://youtube.com/@faynateam" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 p-3 rounded-full hover:scale-110"
+              aria-label="Youtube"
+            >
+              <Youtube size={24} className="text-white" />
+            </a>
+            <a 
+              href="https://instagram.com/faynateam" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 p-3 rounded-full hover:scale-110"
+              aria-label="Instagram"
+            >
+              <Instagram size={24} className="text-white" />
+            </a>
           </div>
         </div>
       </section>
